@@ -34,9 +34,16 @@ export default function Footer() {
                 letterSpacing: "-0.015em",
               }}
             >
-              DELTA
-              <br />
-              <span className="inline-flex items-baseline gap-4 md:gap-8">
+              <span style={{ display: "block" }}>DELTA</span>
+              <span
+                className="items-baseline gap-4 md:gap-8 relative"
+                style={{
+                  display: "flex",
+                  marginTop: "-0.22em",
+                  textShadow:
+                    "0 -8px 22px rgba(0,0,0,0.9), 0 -3px 6px rgba(0,0,0,0.95)",
+                }}
+              >
                 <em
                   style={{
                     fontFamily: "var(--font-fraunces)",
