@@ -23,39 +23,36 @@ export default function Footer() {
             <span>Est. MMIX</span>
           </div>
 
-          {/* Stacked wordmark — DELTA / BLUES with italic ampersand */}
+          {/* Stacked wordmark — DELTA / & ROCK */}
           <div className="relative">
-            <p
-              className="leading-[0.72] tracking-[-0.015em] text-[#f3ebdc]"
+            <h2
+              className="text-[#f3ebdc]"
               style={{
                 fontFamily: "var(--font-anton)",
                 fontSize: "clamp(72px, 14vw, 220px)",
+                lineHeight: 0.82,
+                letterSpacing: "-0.015em",
               }}
             >
               DELTA
-            </p>
-            <p
-              className="leading-[0.72] tracking-[-0.015em] text-[#f3ebdc] flex items-baseline gap-4 md:gap-8 -mt-[0.18em]"
-              style={{
-                fontFamily: "var(--font-anton)",
-                fontSize: "clamp(72px, 14vw, 220px)",
-              }}
-            >
-              <em
-                style={{
-                  fontFamily: "var(--font-fraunces)",
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                  color: "#c14a1a",
-                  fontVariationSettings: "'opsz' 144, 'SOFT' 100",
-                  fontSize: "0.95em",
-                  lineHeight: 1,
-                }}
-              >
-                &amp;
-              </em>
-              ROCK
-            </p>
+              <br />
+              <span className="inline-flex items-baseline gap-4 md:gap-8">
+                <em
+                  style={{
+                    fontFamily: "var(--font-fraunces)",
+                    fontStyle: "italic",
+                    fontWeight: 400,
+                    color: "#c14a1a",
+                    fontVariationSettings: "'opsz' 144, 'SOFT' 100",
+                    fontSize: "0.95em",
+                    lineHeight: 1,
+                  }}
+                >
+                  &amp;
+                </em>
+                ROCK
+              </span>
+            </h2>
 
             {/* Tagline tucked under */}
             <p
