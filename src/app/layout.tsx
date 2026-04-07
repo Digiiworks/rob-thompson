@@ -56,12 +56,14 @@ export const metadata: Metadata = {
     title: "Rob Thompson — Delta Blues Musician | Gqeberha",
     description:
       "Book Gqeberha's premier Delta blues and rock guitarist for your next event.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Rob Thompson — Delta blues guitarist live on stage" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rob Thompson — Delta Blues Musician | Gqeberha",
     description:
       "Book Gqeberha's premier Delta blues and rock guitarist for your next event.",
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -76,6 +78,56 @@ export default function RootLayout({
       className={`${anton.variable} ${fraunces.variable} ${jetbrains.variable}`}
     >
       <body className="grain min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "MusicGroup",
+                name: "Rob Thompson Band",
+                alternateName: "Rob Thompson",
+                url: SITE_URL,
+                image: `${SITE_URL}/og-image.jpg`,
+                genre: ["Delta Blues", "Blues Rock", "Acoustic Blues"],
+                foundingLocation: {
+                  "@type": "Place",
+                  name: "Gqeberha, Eastern Cape, South Africa",
+                },
+                sameAs: [
+                  "https://www.instagram.com/robthompsonband/",
+                  "https://www.facebook.com/RobThompsonBand/",
+                ],
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "@id": `${SITE_URL}#business`,
+                name: "Rob Thompson — Live Blues Musician",
+                image: `${SITE_URL}/og-image.jpg`,
+                url: SITE_URL,
+                telephone: "+27768967076",
+                email: "bookings@robthompson.co.za",
+                priceRange: "R1000+",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Gqeberha",
+                  addressRegion: "Eastern Cape",
+                  addressCountry: "ZA",
+                },
+                geo: {
+                  "@type": "GeoCoordinates",
+                  latitude: -33.9608,
+                  longitude: 25.6022,
+                },
+                areaServed: {
+                  "@type": "AdministrativeArea",
+                  name: "Eastern Cape, South Africa",
+                },
+              },
+            ]),
+          }}
+        />
         <Navbar />
         <main className="flex-1 relative z-[2]">{children}</main>
         <Footer />

@@ -174,19 +174,6 @@ export default function Footer() {
         </div>
       </div>
 
-      <p
-        aria-hidden="true"
-        style={{
-          fontSize: 1,
-          color: "transparent",
-          position: "absolute",
-          left: -9999,
-        }}
-      >
-        Rob Thompson | Delta Blues Musician | Gqeberha | Port Elizabeth | Eastern
-        Cape | South Africa | live music | book musician | wedding band | private
-        event entertainment
-      </p>
     </footer>
   );
 }
