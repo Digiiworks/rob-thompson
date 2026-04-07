@@ -33,9 +33,6 @@ export default function Navbar() {
     >
       <nav className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between">
         <Link href="/" className="flex items-baseline gap-3 text-current">
-          <span className="font-mono text-[10px] tracking-[0.2em] uppercase opacity-60">
-            EST. 2009
-          </span>
           <span
             style={{
               fontFamily: "var(--font-anton)",
@@ -45,6 +42,9 @@ export default function Navbar() {
             }}
           >
             ROB&nbsp;THOMPSON
+          </span>
+          <span className="font-mono text-[10px] tracking-[0.2em] uppercase opacity-60">
+            EST. 2009
           </span>
         </Link>
 
