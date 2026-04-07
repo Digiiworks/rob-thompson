@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function BookPage() {
   return (
-    <main className="pt-24">
+    <div className="pt-24">
       <BookingForm />
-    </main>
+    </div>
   );
 }

@@ -14,106 +14,99 @@ function formatTime(t: string | null) {
 export default function ShowCard({ p }: { p: Performance }) {
   const d = new Date(p.event_date + "T00:00:00");
   const day = d.getDate();
-  const monthYear = `${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
+  const month = MONTHS[d.getMonth()];
+  const year = d.getFullYear();
   const time = formatTime(p.start_time);
 
   return (
-    <article className="bg-[#1a1a1a] border border-[#2a2a2a] p-8 flex flex-col">
-      <div>
-        <p
-          style={{
-            fontFamily: "var(--font-bebas)",
-            fontSize: 56,
-            color: "#cc2929",
-            lineHeight: 0.9,
-          }}
-        >
-          {day}
-        </p>
-        <p
-          className="text-[#999] uppercase mt-1"
-          style={{
-            fontFamily: "var(--font-oswald)",
-            fontSize: 13,
-            letterSpacing: "0.15em",
-          }}
-        >
-          {monthYear}
-        </p>
+    <article className="group relative grid grid-cols-12 gap-6 items-baseline py-10 border-t border-[#16110e]/20 first:border-t-0 hover:bg-[#16110e] hover:text-[#f3ebdc] hover:dark-zone transition-colors duration-300 cursor-default">
+      {/* Day */}
+      <div className="col-span-3 md:col-span-2 pl-2 md:pl-6">
+        <div className="flex items-baseline gap-1">
+          <span
+            style={{
+              fontFamily: "var(--font-anton)",
+              fontSize: "clamp(72px, 10vw, 132px)",
+              lineHeight: 0.85,
+            }}
+            className="group-hover:text-[#c14a1a] transition-colors"
+          >
+            {day}
+          </span>
+          <span
+            className="font-mono text-[11px] tracking-[0.18em] uppercase opacity-70"
+            style={{ alignSelf: "flex-start", marginTop: 8 }}
+          >
+            {month}<br />{year}
+          </span>
+        </div>
       </div>
 
-      <div className="my-5 h-px bg-[#cc2929]" />
-
-      <h3
-        className="text-white"
-        style={{
-          fontFamily: "var(--font-oswald)",
-          fontSize: 19,
-          fontWeight: 600,
-          lineHeight: 1.3,
-        }}
-      >
-        {p.venue_name}
-      </h3>
-      {p.venue_address && (
-        <p
-          className="text-[#999] mt-2"
-          style={{ fontFamily: "var(--font-dm-sans)", fontSize: 14 }}
+      {/* Title + venue */}
+      <div className="col-span-9 md:col-span-7">
+        <h3
+          style={{
+            fontFamily: "var(--font-fraunces)",
+            fontSize: "clamp(22px, 2.4vw, 32px)",
+            fontWeight: 500,
+            lineHeight: 1.15,
+            textTransform: "none",
+            letterSpacing: "-0.01em",
+          }}
         >
-          {p.venue_address}
-        </p>
-      )}
-      {time && (
+          {p.title}
+        </h3>
         <p
-          className="text-[#999] mt-1"
-          style={{ fontFamily: "var(--font-dm-sans)", fontSize: 14 }}
+          className="mt-3 opacity-80"
+          style={{
+            fontFamily: "var(--font-fraunces)",
+            fontSize: 17,
+            lineHeight: 1.4,
+          }}
         >
-          {time}
+          {p.venue_name}
+          {p.venue_address && (
+            <>
+              {" "}
+              <span className="opacity-60">— {p.venue_address}</span>
+            </>
+          )}
         </p>
-      )}
+        {time && (
+          <p className="font-mono text-[11px] tracking-[0.18em] uppercase opacity-60 mt-3">
+            Doors {time}
+          </p>
+        )}
+      </div>
 
-      <div className="flex items-center justify-between mt-auto pt-6">
+      {/* Price + CTA */}
+      <div className="col-span-12 md:col-span-3 md:text-right pr-2 md:pr-6 flex md:flex-col md:items-end gap-4 md:gap-3">
         <span
-          className="text-white"
-          style={{ fontFamily: "var(--font-oswald)", fontSize: 15 }}
+          style={{
+            fontFamily: "var(--font-anton)",
+            fontSize: 28,
+            color: "#7a1818",
+          }}
+          className="group-hover:text-[#c14a1a] transition-colors"
         >
-          {p.ticket_price ? `R${p.ticket_price.toFixed(0)}` : "Free Entry"}
+          {p.ticket_price ? `R${p.ticket_price.toFixed(0)}` : "FREE"}
         </span>
         {p.is_sold_out ? (
-          <span
-            className="px-3 py-1 bg-[#2a2a2a] text-[#999] uppercase"
-            style={{
-              fontFamily: "var(--font-oswald)",
-              fontSize: 12,
-              letterSpacing: "0.15em",
-            }}
-          >
-            Sold Out
+          <span className="font-mono text-[10px] tracking-[0.2em] uppercase opacity-60">
+            ◆ Sold Out
           </span>
         ) : p.ticket_url ? (
           <a
             href={p.ticket_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-[#cc2929] text-[#cc2929] px-4 py-2 uppercase hover:bg-[#cc2929] hover:text-white transition-colors"
-            style={{
-              fontFamily: "var(--font-oswald)",
-              fontSize: 12,
-              letterSpacing: "0.15em",
-            }}
+            className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 hover:text-[#c14a1a] transition-colors"
           >
-            Get Tickets
+            Get Tickets →
           </a>
         ) : (
-          <span
-            className="text-[#666] uppercase"
-            style={{
-              fontFamily: "var(--font-oswald)",
-              fontSize: 12,
-              letterSpacing: "0.15em",
-            }}
-          >
-            Free Entry
+          <span className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-60">
+            ◆ Free Entry
           </span>
         )}
       </div>

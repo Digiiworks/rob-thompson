@@ -1,5 +1,4 @@
 import Link from "next/link";
-import SectionTitle from "@/components/ui/SectionTitle";
 import ShowCard from "./ShowCard";
 import { getUpcomingPerformances } from "@/lib/performances";
 
@@ -9,41 +8,67 @@ export default async function Shows() {
   return (
     <section
       id="shows"
-      className="bg-[#0a0a0a] py-20 md:py-[100px] px-6 border-t border-[#1a1a1a]"
+      className="relative bg-[#f3ebdc] text-[#16110e] py-24 md:py-36 px-6 md:px-10"
     >
-      <SectionTitle
-        eyebrow="What's On"
-        title="Upcoming Live Performances in Gqeberha"
-        subtitle="Catch Rob Thompson live across Gqeberha, Port Elizabeth and the Eastern Cape"
-      />
+      <div className="max-w-[1400px] mx-auto">
+        <div className="flex items-center gap-4 mb-12">
+          <span className="font-mono text-[11px] tracking-[0.22em] uppercase opacity-60">
+            003 / Tour Schedule
+          </span>
+          <span className="hairline flex-1 max-w-[160px]" />
+        </div>
 
-      <div className="max-w-[1200px] mx-auto mt-14">
-        {performances.length === 0 ? (
-          <div className="text-center py-16">
-            <p
-              className="text-[#999] mb-6"
-              style={{ fontFamily: "var(--font-dm-sans)", fontSize: 18 }}
-            >
-              No upcoming shows scheduled. Check back soon — or book Rob for your
-              next event.
-            </p>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+          <h2
+            style={{
+              fontSize: "clamp(54px, 8.5vw, 130px)",
+              lineHeight: 0.85,
+              maxWidth: 900,
+            }}
+          >
+            Upcoming
+            <br />
+            Live Shows<span style={{ color: "#7a1818" }}>.</span>
+          </h2>
+          <p
+            className="md:max-w-xs md:text-right opacity-80"
+            style={{
+              fontFamily: "var(--font-fraunces)",
+              fontSize: 17,
+              lineHeight: 1.5,
+            }}
+          >
+            Catch Rob live across Gqeberha, Port Elizabeth and the
+            Eastern Cape. Want him at your event?{" "}
             <Link
               href="/book"
-              className="text-[#cc2929] uppercase border-b border-[#cc2929] pb-1"
-              style={{
-                fontFamily: "var(--font-oswald)",
-                fontSize: 14,
-                letterSpacing: "0.15em",
-              }}
+              className="text-[#7a1818] underline underline-offset-4 italic"
+              style={{ fontVariationSettings: "'opsz' 60, 'SOFT' 100" }}
             >
-              Book Rob
+              Book a date.
+            </Link>
+          </p>
+        </div>
+
+        {performances.length === 0 ? (
+          <div className="text-center py-24 border-y border-[#16110e]/20">
+            <p
+              className="opacity-70 mb-6"
+              style={{ fontFamily: "var(--font-fraunces)", fontSize: 19 }}
+            >
+              No shows on the books right now. Check back soon — or hire Rob
+              for your next event.
+            </p>
+            <Link href="/book" className="btn-primary">
+              Book Rob →
             </Link>
           </div>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div>
             {performances.map((p) => (
               <ShowCard key={p.id} p={p} />
             ))}
+            <div className="border-t border-[#16110e]/20" />
           </div>
         )}
       </div>

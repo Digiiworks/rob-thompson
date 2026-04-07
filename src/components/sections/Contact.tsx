@@ -1,86 +1,102 @@
+import Link from "next/link";
 import { Phone, Mail, Camera } from "lucide-react";
-import Button from "@/components/ui/Button";
 import { SITE } from "@/lib/utils";
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-[#0a0a0a] py-20 md:py-[100px] px-6 border-t border-[#1a1a1a]"
+      className="relative bg-[#f3ebdc] text-[#16110e] py-24 md:py-36 px-6 md:px-10"
     >
-      <div className="max-w-2xl mx-auto bg-[#1a1a1a] border border-[#2a2a2a] p-10 md:p-14 text-center">
-        <p
-          className="text-[#cc2929] uppercase mb-4"
-          style={{
-            fontFamily: "var(--font-oswald)",
-            fontSize: 13,
-            letterSpacing: "0.2em",
-            fontWeight: 500,
-          }}
-        >
-          Contact
-        </p>
-        <h2
-          className="text-white"
-          style={{
-            fontFamily: "var(--font-bebas)",
-            fontSize: "clamp(40px, 6vw, 56px)",
-            lineHeight: 1,
-          }}
-        >
-          Get in Touch — Bookings &amp; Enquiries
-        </h2>
-        <p
-          className="text-[#999] mt-4"
-          style={{ fontFamily: "var(--font-dm-sans)", fontSize: 16 }}
-        >
-          Based in Gqeberha (Port Elizabeth), Eastern Cape, South Africa
-        </p>
+      <div className="max-w-[1400px] mx-auto">
+        <div className="flex items-center gap-4 mb-12">
+          <span className="font-mono text-[11px] tracking-[0.22em] uppercase opacity-60">
+            006 / Get In Touch
+          </span>
+          <span className="hairline flex-1 max-w-[160px]" />
+        </div>
 
-        <ul className="mt-10 space-y-5 text-left max-w-md mx-auto">
-          <li className="flex items-center gap-4">
-            <Phone size={20} className="text-[#cc2929] shrink-0" />
-            <a
-              href={`tel:${SITE.phoneRaw}`}
-              className="text-white hover:text-[#cc2929]"
-              style={{ fontFamily: "var(--font-dm-sans)", fontSize: 16 }}
-            >
-              {SITE.phone}
-            </a>
-          </li>
-          <li className="flex items-center gap-4">
-            <Mail size={20} className="text-[#cc2929] shrink-0" />
-            <a
-              href={`mailto:${SITE.email}`}
-              className="text-white hover:text-[#cc2929] break-all"
-              style={{ fontFamily: "var(--font-dm-sans)", fontSize: 16 }}
-            >
-              {SITE.email}
-            </a>
-          </li>
-          <li className="flex items-center gap-4">
-            <Camera size={20} className="text-[#cc2929] shrink-0" />
-            <a
-              href={SITE.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-[#cc2929]"
-              style={{ fontFamily: "var(--font-dm-sans)", fontSize: 16 }}
-            >
-              @robthompsonband
-            </a>
-          </li>
-        </ul>
+        <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
+          <div className="md:col-span-7">
+            <h2 style={{ fontSize: "clamp(54px, 9vw, 140px)", lineHeight: 0.85 }}>
+              Drop
+              <br />
+              Rob a<br />
+              <em
+                style={{
+                  fontFamily: "var(--font-fraunces)",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  textTransform: "none",
+                  color: "#7a1818",
+                  fontVariationSettings: "'opsz' 144, 'SOFT' 100",
+                }}
+              >
+                line.
+              </em>
+            </h2>
+          </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-          <Button href={SITE.whatsapp} external>
-            WhatsApp Rob
-          </Button>
-          <Button href="/book" variant="secondary">
-            Book Online
-          </Button>
+          <div className="md:col-span-5">
+            <p
+              className="opacity-80"
+              style={{ fontFamily: "var(--font-fraunces)", fontSize: 18, lineHeight: 1.55 }}
+            >
+              Based in Gqeberha (Port Elizabeth), Eastern Cape. Easiest way to
+              reach Rob is WhatsApp — but the inbox stays open too.
+            </p>
+
+            <ul className="mt-10 space-y-6 border-t border-[#16110e]/20 pt-8">
+              <ContactRow icon={<Phone size={18} />} label="Bookings & Enquiries" value={SITE.phone} href={`tel:${SITE.phoneRaw}`} />
+              <ContactRow icon={<Mail size={18} />} label="Email" value={SITE.email} href={`mailto:${SITE.email}`} />
+              <ContactRow icon={<Camera size={18} />} label="Instagram" value="@robthompsonband" href={SITE.instagram} external />
+            </ul>
+
+            <div className="flex flex-wrap gap-4 mt-10">
+              <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                WhatsApp Rob →
+              </a>
+              <Link href="/book" className="btn-secondary">
+                Book Online
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function ContactRow({
+  icon,
+  label,
+  value,
+  href,
+  external,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  href: string;
+  external?: boolean;
+}) {
+  const linkProps = external
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {};
+  return (
+    <li className="group">
+      <p className="font-mono text-[10px] tracking-[0.22em] uppercase opacity-60 mb-1">
+        {label}
+      </p>
+      <a
+        href={href}
+        {...linkProps}
+        className="flex items-center gap-3 hover:text-[#7a1818] transition-colors"
+        style={{ fontFamily: "var(--font-fraunces)", fontSize: 22, fontWeight: 500 }}
+      >
+        <span className="text-[#7a1818] opacity-80">{icon}</span>
+        {value}
+      </a>
+    </li>
   );
 }

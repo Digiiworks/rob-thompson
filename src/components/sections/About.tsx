@@ -1,87 +1,125 @@
 import Image from "next/image";
 
 const stats = [
-  { icon: "🎸", label: "15+ Years Performing" },
-  { icon: "🎤", label: "100+ Live Venues" },
-  { icon: "📍", label: "Based in Gqeberha" },
+  { n: "15+", label: "Years on stage" },
+  { n: "100+", label: "Live venues" },
+  { n: "01", label: "Hometown — Gqeberha" },
 ];
 
 export default function About() {
   return (
     <section
       id="about"
-      className="bg-[#0a0a0a] py-20 md:py-[100px] px-6"
+      className="relative bg-[#16110e] text-[#f3ebdc] dark-zone py-24 md:py-36 px-6 md:px-10 overflow-hidden"
     >
-      <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-stretch">
-        <div className="relative h-[420px] md:h-[560px] border-l-2 border-[#cc2929]">
-          <Image
-            src="https://images.unsplash.com/photo-1525362081669-2b476bb628c3?w=900&q=85&fm=webp"
-            alt="Rob Thompson playing acoustic Delta blues guitar"
-            fill
-            sizes="(max-width: 768px) 100vw, 600px"
-            className="object-cover"
-          />
+      {/* Section number */}
+      <div className="max-w-[1400px] mx-auto">
+        <div className="flex items-center gap-4 mb-16">
+          <span className="font-mono text-[11px] tracking-[0.22em] uppercase opacity-60">
+            002 / The Player
+          </span>
+          <span className="hairline flex-1 max-w-[160px]" />
         </div>
 
-        <div className="md:pl-10 flex flex-col justify-center">
-          <p
-            className="text-[#cc2929] uppercase mb-4"
-            style={{
-              fontFamily: "var(--font-oswald)",
-              fontSize: 13,
-              letterSpacing: "0.2em",
-              fontWeight: 500,
-            }}
-          >
-            About Rob
-          </p>
-          <h2
-            className="text-white mb-6"
-            style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(36px, 5vw, 52px)",
-              lineHeight: 1,
-            }}
-          >
-            Gqeberha&apos;s Premier Blues Guitarist
-          </h2>
-          <p
-            className="text-[#bbb] mb-6"
-            style={{
-              fontFamily: "var(--font-dm-sans)",
-              fontSize: 17,
-              lineHeight: 1.7,
-            }}
-          >
-            Rob Thompson is Gqeberha&apos;s most celebrated Delta blues and rock
-            guitarist — delivering raw, soulful performances that move rooms and
-            fill venues across the Eastern Cape. From intimate speakeasy sets to
-            headline shows, Rob brings the spirit of the Mississippi Delta to the
-            South African stage.
-          </p>
-          <blockquote
-            className="border-l-2 border-[#cc2929] pl-5 my-6 text-[#ddd] italic"
-            style={{
-              fontFamily: "var(--font-dm-sans)",
-              fontSize: 17,
-              lineHeight: 1.6,
-            }}
-          >
-            “The blues isn&apos;t just music — it&apos;s a conversation between
-            the guitar and the soul.”
-          </blockquote>
-          <ul className="flex flex-wrap gap-6 mt-4">
-            {stats.map((s) => (
-              <li
-                key={s.label}
-                className="text-[#999]"
-                style={{ fontFamily: "var(--font-oswald)", fontSize: 14 }}
+        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-start">
+          {/* Image — left, offset */}
+          <div className="md:col-span-5 md:col-start-1">
+            <div
+              className="relative aspect-[4/5] border border-[#f3ebdc]/30"
+              style={{ boxShadow: "10px 10px 0 #7a1818" }}
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1525362081669-2b476bb628c3?w=900&q=85&fm=webp"
+                alt="Rob Thompson playing acoustic Delta blues guitar"
+                fill
+                sizes="(max-width: 768px) 100vw, 500px"
+                className="object-cover"
+              />
+            </div>
+            <p className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-50 mt-4">
+              Photo · Live at Nineteen33 · Gqeberha
+            </p>
+          </div>
+
+          {/* Copy — right, narrower */}
+          <div className="md:col-span-6 md:col-start-7">
+            <h2
+              style={{
+                fontSize: "clamp(48px, 7.5vw, 110px)",
+                lineHeight: 0.85,
+              }}
+            >
+              The Eastern
+              <br />
+              Cape&apos;s Own
+              <br />
+              <em
+                style={{
+                  fontFamily: "var(--font-fraunces)",
+                  fontVariationSettings: "'opsz' 144, 'SOFT' 100",
+                  color: "#c14a1a",
+                  fontSize: "0.92em",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  textTransform: "none",
+                  letterSpacing: "-0.02em",
+                }}
               >
-                <span className="mr-2">{s.icon}</span>
-                {s.label}
-              </li>
-            ))}
-          </ul>
+                bluesman.
+              </em>
+            </h2>
+
+            <p
+              className="mt-10 text-[#e7dec8] max-w-xl"
+              style={{
+                fontFamily: "var(--font-fraunces)",
+                fontSize: 19,
+                lineHeight: 1.55,
+              }}
+            >
+              Rob Thompson plays the kind of blues you feel in your ribs.
+              Born and raised in Gqeberha, he&apos;s spent the better part of
+              two decades dragging Delta licks, slide guitar and Mississippi
+              grit across every stage from speakeasies to festival main stages
+              up and down the Eastern Cape.
+            </p>
+
+            <blockquote
+              className="mt-10 pl-6 border-l-2 border-[#7a1818]"
+              style={{
+                fontFamily: "var(--font-fraunces)",
+                fontSize: 22,
+                lineHeight: 1.4,
+                fontStyle: "italic",
+                fontVariationSettings: "'opsz' 60, 'SOFT' 100",
+                color: "#fbf6ec",
+              }}
+            >
+              “The blues isn&apos;t just music — it&apos;s a conversation
+              between the guitar and the soul.”
+            </blockquote>
+
+            {/* Stats */}
+            <div className="mt-14 grid grid-cols-3 gap-6 border-t border-[#f3ebdc]/20 pt-8">
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-anton)",
+                      fontSize: "clamp(40px, 5vw, 64px)",
+                      lineHeight: 0.9,
+                      color: "#c14a1a",
+                    }}
+                  >
+                    {s.n}
+                  </p>
+                  <p className="font-mono text-[10px] tracking-[0.16em] uppercase opacity-70 mt-2">
+                    {s.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

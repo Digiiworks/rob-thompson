@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Oswald, DM_Sans } from "next/font/google";
+import { Anton, Fraunces, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const bebas = Bebas_Neue({
-  variable: "--font-bebas",
+const anton = Anton({
+  variable: "--font-anton",
   subsets: ["latin"],
   weight: "400",
   display: "swap",
 });
 
-const oswald = Oswald({
-  variable: "--font-oswald",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  axes: ["opsz", "SOFT", "WONK"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -73,11 +73,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bebas.variable} ${oswald.variable} ${dmSans.variable}`}
+      className={`${anton.variable} ${fraunces.variable} ${jetbrains.variable}`}
     >
-      <body className="min-h-screen flex flex-col">
+      <body className="grain min-h-screen flex flex-col">
         <Navbar />
-        <div className="flex-1">{children}</div>
+        <main className="flex-1 relative z-[2]">{children}</main>
         <Footer />
       </body>
     </html>

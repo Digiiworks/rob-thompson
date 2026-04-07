@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 export default function ShowsPage() {
   return (
-    <main className="pt-24">
+    <div className="pt-24">
       <Shows />
-    </main>
+    </div>
   );
 }

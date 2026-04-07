@@ -12,75 +12,114 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] border-t-2 border-[#cc2929]">
-      <div className="max-w-[1200px] mx-auto px-6 py-16 grid md:grid-cols-3 gap-10">
-        <div>
+    <footer className="relative bg-[#16110e] text-[#f3ebdc] dark-zone overflow-hidden">
+      {/* Oversized wordmark */}
+      <div className="border-b border-[#f3ebdc]/15 px-6 md:px-10 pt-16 pb-10">
+        <div className="max-w-[1400px] mx-auto">
           <p
+            className="leading-[0.78] tracking-[-0.01em]"
             style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: 28,
-              color: "#cc2929",
-              letterSpacing: "0.04em",
+              fontFamily: "var(--font-anton)",
+              fontSize: "clamp(96px, 18vw, 280px)",
+              color: "#f3ebdc",
             }}
           >
-            ROB THOMPSON
+            ROB&nbsp;
+            <em
+              style={{
+                fontFamily: "var(--font-fraunces)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                color: "#c14a1a",
+                fontVariationSettings: "'opsz' 144, 'SOFT' 100",
+              }}
+            >
+              T.
+            </em>
           </p>
-          <p
-            className="text-[#999] mt-2"
-            style={{ fontFamily: "var(--font-dm-sans)", fontSize: 14 }}
-          >
-            Delta Blues &amp; Rock | Gqeberha
+        </div>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-14 grid md:grid-cols-12 gap-10">
+        <div className="md:col-span-4">
+          <p className="font-mono text-[10px] tracking-[0.22em] uppercase opacity-60 mb-3">
+            ◆ The Player
+          </p>
+          <p style={{ fontFamily: "var(--font-fraunces)", fontSize: 17, lineHeight: 1.55 }}>
+            Rob Thompson — Delta blues &amp; rock guitarist. Based in
+            Gqeberha, available across the Eastern Cape and beyond.
           </p>
         </div>
 
-        <ul className="flex flex-col md:flex-row md:justify-center gap-4 md:gap-8">
-          {links.map((l) => (
-            <li key={l.href}>
-              <Link
-                href={l.href}
-                className="text-[#666] hover:text-white transition-colors uppercase"
-                style={{
-                  fontFamily: "var(--font-oswald)",
-                  fontSize: 13,
-                  letterSpacing: "0.1em",
-                }}
-              >
-                {l.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="md:col-span-3">
+          <p className="font-mono text-[10px] tracking-[0.22em] uppercase opacity-60 mb-4">
+            ◆ Sitemap
+          </p>
+          <ul className="space-y-2">
+            {links.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="hover:text-[#c14a1a] transition-colors"
+                  style={{
+                    fontFamily: "var(--font-anton)",
+                    fontSize: 16,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        <div className="flex flex-col md:items-end gap-3">
-          <a
-            href={SITE.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Camera"
-            className="text-[#999] hover:text-[#cc2929] transition-colors"
-          >
-            <Camera size={22} />
-          </a>
+        <div className="md:col-span-3">
+          <p className="font-mono text-[10px] tracking-[0.22em] uppercase opacity-60 mb-4">
+            ◆ Direct
+          </p>
+          <ul className="space-y-2" style={{ fontFamily: "var(--font-fraunces)", fontSize: 16 }}>
+            <li><a href={`tel:${SITE.phoneRaw}`} className="hover:text-[#c14a1a]">{SITE.phone}</a></li>
+            <li><a href={`mailto:${SITE.email}`} className="hover:text-[#c14a1a] break-all">{SITE.email}</a></li>
+            <li>
+              <a
+                href={SITE.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 hover:text-[#c14a1a]"
+              >
+                <Camera size={16} /> @robthompsonband
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="md:col-span-2 md:text-right">
+          <p className="font-mono text-[10px] tracking-[0.22em] uppercase opacity-60 mb-4">
+            ◆ Built by
+          </p>
           <a
             href="https://digiiworks.co"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#666] hover:text-white transition-colors"
-            style={{ fontFamily: "var(--font-oswald)", fontSize: 12, letterSpacing: "0.1em" }}
+            className="hover:text-[#c14a1a]"
+            style={{
+              fontFamily: "var(--font-anton)",
+              fontSize: 18,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+            }}
           >
-            Website by DigiWorks
+            Digiiworks
           </a>
         </div>
       </div>
 
-      <div className="border-t border-[#1a1a1a]">
-        <div className="max-w-[1200px] mx-auto px-6 py-6 text-center">
-          <p
-            className="text-[#444]"
-            style={{ fontFamily: "var(--font-dm-sans)", fontSize: 13 }}
-          >
-            © {new Date().getFullYear()} Rob Thompson. All rights reserved.
-          </p>
+      <div className="border-t border-[#f3ebdc]/15 px-6 md:px-10 py-6">
+        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between gap-3 font-mono text-[10px] tracking-[0.18em] uppercase opacity-60">
+          <span>© {new Date().getFullYear()} Rob Thompson · All Rights Reserved</span>
+          <span>Gqeberha · Eastern Cape · ZA</span>
         </div>
       </div>
 

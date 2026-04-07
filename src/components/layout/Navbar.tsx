@@ -3,15 +3,13 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import Button from "@/components/ui/Button";
-import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/#about", label: "About" },
-  { href: "/shows", label: "Shows" },
-  { href: "/book", label: "Book Rob" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/", label: "Home", n: "01" },
+  { href: "/#about", label: "About", n: "02" },
+  { href: "/shows", label: "Shows", n: "03" },
+  { href: "/book", label: "Book", n: "04" },
+  { href: "/#contact", label: "Contact", n: "05" },
 ];
 
 export default function Navbar() {
@@ -19,7 +17,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -27,71 +25,78 @@ export default function Navbar() {
 
   return (
     <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-[100] transition-all duration-300",
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         scrolled
-          ? "bg-[rgba(10,10,10,0.95)] backdrop-blur-md border-b border-[#2a2a2a]"
-          : "bg-transparent",
-      )}
+          ? "bg-[#f3ebdc]/95 backdrop-blur-sm border-b border-[#16110e]/15 py-3"
+          : "bg-transparent py-6"
+      }`}
     >
-      <nav className="max-w-[1200px] mx-auto px-6 py-5 flex items-center justify-between">
-        <Link
-          href="/"
-          style={{
-            fontFamily: "var(--font-bebas)",
-            fontSize: 28,
-            color: "#cc2929",
-            letterSpacing: "0.04em",
-          }}
-        >
-          ROB THOMPSON
+      <nav className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between">
+        <Link href="/" className="flex items-baseline gap-3 text-[#16110e]">
+          <span className="font-mono text-[10px] tracking-[0.2em] uppercase opacity-60">
+            EST. 2009
+          </span>
+          <span
+            style={{
+              fontFamily: "var(--font-anton)",
+              fontSize: scrolled ? 22 : 26,
+              letterSpacing: "0.04em",
+              transition: "font-size .25s",
+            }}
+          >
+            ROB&nbsp;THOMPSON
+          </span>
         </Link>
 
-        <ul className="hidden md:flex items-center gap-10">
+        <ul className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="text-[#999] hover:text-white transition-colors uppercase"
-                style={{
-                  fontFamily: "var(--font-oswald)",
-                  fontSize: 14,
-                  letterSpacing: "0.1em",
-                  fontWeight: 500,
-                }}
+                className="group flex items-baseline gap-1 text-[#16110e] hover:text-[#7a1818] transition-colors"
               >
-                {l.label}
+                <span className="font-mono text-[10px] opacity-50">{l.n}</span>
+                <span
+                  style={{
+                    fontFamily: "var(--font-anton)",
+                    fontSize: 15,
+                    letterSpacing: "0.12em",
+                  }}
+                >
+                  {l.label}
+                </span>
               </Link>
             </li>
           ))}
+          <li>
+            <Link href="/book" className="btn-primary !py-3 !px-5 text-[12px]">
+              Book Rob →
+            </Link>
+          </li>
         </ul>
-
-        <div className="hidden md:block">
-          <Button href="/book">Book Now</Button>
-        </div>
 
         <button
           aria-label="Toggle menu"
-          className="md:hidden text-white p-2"
+          className="md:hidden text-[#16110e] p-2"
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={26} /> : <Menu size={26} />}
         </button>
       </nav>
 
       {open && (
-        <div className="md:hidden bg-[#111] border-t border-[#2a2a2a]">
-          <ul className="flex flex-col p-6 gap-5">
+        <div className="md:hidden bg-[#16110e] text-[#f3ebdc] dark-zone">
+          <ul className="flex flex-col p-8 gap-6">
             {links.map((l) => (
-              <li key={l.href}>
+              <li key={l.href} className="flex items-baseline gap-3">
+                <span className="font-mono text-[11px] opacity-60">{l.n}</span>
                 <Link
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-white uppercase block"
                   style={{
-                    fontFamily: "var(--font-oswald)",
-                    fontSize: 16,
-                    letterSpacing: "0.1em",
+                    fontFamily: "var(--font-anton)",
+                    fontSize: 26,
+                    letterSpacing: "0.05em",
                   }}
                 >
                   {l.label}
@@ -99,9 +104,13 @@ export default function Navbar() {
               </li>
             ))}
             <li className="pt-4">
-              <Button href="/book" className="w-full">
-                Book Now
-              </Button>
+              <Link
+                href="/book"
+                onClick={() => setOpen(false)}
+                className="btn-primary"
+              >
+                Book Rob →
+              </Link>
             </li>
           </ul>
         </div>
