@@ -27,12 +27,12 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         scrolled
-          ? "bg-[#f3ebdc]/95 backdrop-blur-sm border-b border-[#16110e]/15 py-3"
-          : "bg-transparent py-6"
+          ? "bg-[#f3ebdc]/95 backdrop-blur-sm border-b border-[#16110e]/15 py-3 text-[#16110e]"
+          : "bg-gradient-to-b from-[#0b0805]/80 to-transparent py-6 text-[#f3ebdc]"
       }`}
     >
       <nav className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between">
-        <Link href="/" className="flex items-baseline gap-3 text-[#16110e]">
+        <Link href="/" className="flex items-baseline gap-3 text-current">
           <span className="font-mono text-[10px] tracking-[0.2em] uppercase opacity-60">
             EST. 2009
           </span>
@@ -53,7 +53,7 @@ export default function Navbar() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="group flex items-baseline gap-1 text-[#16110e] hover:text-[#7a1818] transition-colors"
+                className="group flex items-baseline gap-1 text-current hover:text-[#7a1818] transition-colors"
               >
                 <span className="font-mono text-[10px] opacity-50">{l.n}</span>
                 <span
@@ -77,7 +77,7 @@ export default function Navbar() {
 
         <button
           aria-label="Toggle menu"
-          className="md:hidden text-[#16110e] p-2"
+          className="md:hidden text-current p-2"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X size={26} /> : <Menu size={26} />}

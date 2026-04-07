@@ -31,6 +31,11 @@ html, body {
   overflow-x: clip;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 body {
   color: #16110e;
   font-family: var(--font-fraunces), "Times New Roman", serif;

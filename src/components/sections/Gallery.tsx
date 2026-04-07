@@ -1,42 +1,11 @@
 import Image from "next/image";
 
 const images = [
-  {
-    src: "/photos/rob-01.jpg",
-    alt: "Rob Thompson live on stage",
-    span: "md:col-span-7 md:row-span-2",
-    h: "h-[520px] md:h-full",
-  },
-  {
-    src: "/photos/rob-02.jpg",
-    alt: "Rob Thompson performing",
-    span: "md:col-span-5",
-    h: "h-[320px]",
-  },
-  {
-    src: "/photos/rob-05.jpg",
-    alt: "Rob Thompson with guitar",
-    span: "md:col-span-5",
-    h: "h-[280px]",
-  },
-  {
-    src: "/photos/rob-03.jpg",
-    alt: "Rob Thompson acoustic set",
-    span: "md:col-span-4",
-    h: "h-[420px]",
-  },
-  {
-    src: "/photos/rob-04.jpg",
-    alt: "Rob Thompson live performance",
-    span: "md:col-span-4",
-    h: "h-[420px]",
-  },
-  {
-    src: "/photos/rob-02.jpg",
-    alt: "Rob Thompson on stage",
-    span: "md:col-span-4",
-    h: "h-[420px]",
-  },
+  { src: "/photos/rob-01.jpg", alt: "Rob Thompson live on stage", span: "md:col-span-8", h: "h-[360px] md:h-[560px]" },
+  { src: "/photos/rob-02.jpg", alt: "Rob Thompson performing",     span: "md:col-span-4", h: "h-[260px] md:h-[560px]" },
+  { src: "/photos/rob-03.jpg", alt: "Rob Thompson acoustic set",   span: "md:col-span-4", h: "h-[260px] md:h-[440px]" },
+  { src: "/photos/rob-04.jpg", alt: "Rob Thompson live",           span: "md:col-span-5", h: "h-[260px] md:h-[440px]" },
+  { src: "/photos/rob-05.jpg", alt: "Rob Thompson with guitar",    span: "md:col-span-3", h: "h-[260px] md:h-[440px]" },
 ];
 
 export default function Gallery() {
@@ -74,7 +43,7 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-12 grid-rows-[repeat(2,minmax(0,1fr))] gap-4 md:gap-6 auto-rows-fr">
+        <div className="grid md:grid-cols-12 gap-4 md:gap-6">
           {images.map((img, i) => (
             <div
               key={img.src}
