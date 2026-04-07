@@ -13,30 +13,65 @@ const links = [
 export default function Footer() {
   return (
     <footer className="relative bg-[#16110e] text-[#f3ebdc] dark-zone overflow-hidden">
-      {/* Oversized wordmark */}
-      <div className="border-b border-[#f3ebdc]/15 px-6 md:px-10 pt-16 pb-10">
-        <div className="max-w-[1400px] mx-auto">
-          <p
-            className="leading-[0.78] tracking-[-0.01em]"
-            style={{
-              fontFamily: "var(--font-anton)",
-              fontSize: "clamp(96px, 18vw, 280px)",
-              color: "#f3ebdc",
-            }}
-          >
-            ROB&nbsp;
-            <em
+      {/* Oversized wordmark — stacked editorial */}
+      <div className="relative border-b border-[#f3ebdc]/15 px-6 md:px-10 pt-20 pb-12 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto relative">
+          {/* Coordinates / meta strip */}
+          <div className="flex items-center justify-between font-mono text-[10px] tracking-[0.22em] uppercase opacity-50 mb-8">
+            <span>33° 57′ S · 25° 36′ E</span>
+            <span className="hidden sm:inline">Side B / Outro</span>
+            <span>Est. MMIX</span>
+          </div>
+
+          {/* Stacked wordmark — DELTA / BLUES with italic ampersand */}
+          <div className="relative">
+            <p
+              className="leading-[0.82] tracking-[-0.015em] text-[#f3ebdc]"
+              style={{
+                fontFamily: "var(--font-anton)",
+                fontSize: "clamp(72px, 14vw, 220px)",
+              }}
+            >
+              DELTA
+            </p>
+            <p
+              className="leading-[0.82] tracking-[-0.015em] text-[#f3ebdc] -mt-2 md:-mt-4 flex items-baseline gap-4 md:gap-8"
+              style={{
+                fontFamily: "var(--font-anton)",
+                fontSize: "clamp(72px, 14vw, 220px)",
+              }}
+            >
+              <em
+                style={{
+                  fontFamily: "var(--font-fraunces)",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  color: "#c14a1a",
+                  fontVariationSettings: "'opsz' 144, 'SOFT' 100",
+                  fontSize: "0.95em",
+                  lineHeight: 1,
+                }}
+              >
+                &amp;
+              </em>
+              ROCK
+            </p>
+
+            {/* Tagline tucked under */}
+            <p
+              className="absolute right-0 bottom-2 hidden md:block max-w-[280px] text-right opacity-80"
               style={{
                 fontFamily: "var(--font-fraunces)",
                 fontStyle: "italic",
-                fontWeight: 400,
-                color: "#c14a1a",
-                fontVariationSettings: "'opsz' 144, 'SOFT' 100",
+                fontSize: 17,
+                lineHeight: 1.45,
+                color: "#e9b27a",
+                fontVariationSettings: "'opsz' 60, 'SOFT' 100",
               }}
             >
-              T.
-            </em>
-          </p>
+              Six strings, fifteen years deep, one Eastern Cape bluesman.
+            </p>
+          </div>
         </div>
       </div>
 
