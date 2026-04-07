@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { Phone, Mail, Camera, Facebook } from "lucide-react";
+import { Phone, Mail, Camera } from "lucide-react";
+
+const FacebookIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+  </svg>
+);
 import { SITE } from "@/lib/utils";
 
 export default function Contact() {
@@ -50,7 +56,7 @@ export default function Contact() {
               <ContactRow icon={<Phone size={18} />} label="Bookings & Enquiries" value={SITE.phone} href={`tel:${SITE.phoneRaw}`} />
               <ContactRow icon={<Mail size={18} />} label="Email" value={SITE.email} href={`mailto:${SITE.email}`} />
               <ContactRow icon={<Camera size={18} />} label="Instagram" value="@robthompsonband" href={SITE.instagram} external />
-              <ContactRow icon={<Facebook size={18} />} label="Facebook" value="/RobThompsonBand" href={SITE.facebook} external />
+              <ContactRow icon={<FacebookIcon size={18} />} label="Facebook" value="/RobThompsonBand" href={SITE.facebook} external />
             </ul>
 
             <div className="flex flex-wrap gap-4 mt-10">
