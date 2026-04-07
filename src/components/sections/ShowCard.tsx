@@ -32,7 +32,7 @@ export default function ShowCard({ p }: { p: Performance }) {
               alt={`${p.title} poster`}
               fill
               sizes="140px"
-              className="object-cover"
+              className="object-cover poster-img"
             />
           </div>
         </div>

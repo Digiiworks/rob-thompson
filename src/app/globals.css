@@ -58,6 +58,12 @@ p { line-height: 1.6; }
 
 img {
   filter: grayscale(100%) contrast(1.05);
+  transition: filter 0.4s ease;
+}
+
+/* Event posters: full color on group hover */
+.group:hover .poster-img {
+  filter: none;
 }
 
 ::selection {

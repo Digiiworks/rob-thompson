@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Camera } from "lucide-react";
 import { SITE } from "@/lib/utils";
 
@@ -136,15 +137,16 @@ export default function Footer() {
             href="https://digiiworks.co"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#c14a1a]"
-            style={{
-              fontFamily: "var(--font-anton)",
-              fontSize: 18,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
+            className="inline-block hover:opacity-100 opacity-80 transition-opacity"
           >
-            Digiiworks
+            <Image
+              src="/digiiworks-logo.svg"
+              alt="Built by Digiiworks"
+              width={140}
+              height={32}
+              className="md:ml-auto"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
           </a>
         </div>
       </div>
