@@ -3,9 +3,9 @@ import Image from "next/image";
 const images = [
   { src: "/photos/rob-01.jpg", alt: "Rob Thompson live on stage", span: "md:col-span-8", h: "h-[360px] md:h-[560px]" },
   { src: "/photos/rob-02.jpg", alt: "Rob Thompson performing",     span: "md:col-span-4", h: "h-[260px] md:h-[560px]" },
-  { src: "/photos/rob-05.jpg", alt: "Rob Thompson with guitar",    span: "md:col-span-4", h: "h-[260px] md:h-[440px]" },
+  { src: "/photos/rob-03.jpg", alt: "Rob Thompson acoustic set",   span: "md:col-span-4", h: "h-[260px] md:h-[440px]" },
   { src: "/photos/rob-04.jpg", alt: "Rob Thompson live",           span: "md:col-span-5", h: "h-[260px] md:h-[440px]" },
-  { src: "/photos/rob-03.jpg", alt: "Rob Thompson acoustic set",   span: "md:col-span-3", h: "h-[260px] md:h-[440px]" },
+  { src: "/photos/rob-01.jpg", alt: "Rob Thompson on stage",       span: "md:col-span-3", h: "h-[260px] md:h-[440px]" },
 ];
 
 export default function Gallery() {
