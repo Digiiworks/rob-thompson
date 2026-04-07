@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Performance } from "@/lib/performances";
 
 const MONTHS = [
@@ -19,9 +20,26 @@ export default function ShowCard({ p }: { p: Performance }) {
   const time = formatTime(p.start_time);
 
   return (
-    <article className="group relative grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-baseline py-10 border-t border-[#16110e]/20 first:border-t-0 hover:bg-[#16110e] hover:text-[#f3ebdc] hover:dark-zone transition-colors duration-300 cursor-default">
+    <article className="group relative grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-center py-10 border-t border-[#16110e]/20 first:border-t-0 hover:bg-[#16110e] hover:text-[#f3ebdc] hover:dark-zone transition-colors duration-300 cursor-default">
+      {/* Poster */}
+      {p.poster_url && (
+        <div className="md:col-span-2 md:pl-6">
+          <div
+            className="relative aspect-[3/4] w-[110px] md:w-full md:max-w-[140px] border border-current/20 overflow-hidden shadow-[6px_6px_0_rgba(122,24,24,0.85)] group-hover:shadow-[6px_6px_0_#c14a1a] transition-shadow"
+          >
+            <Image
+              src={p.poster_url}
+              alt={`${p.title} poster`}
+              fill
+              sizes="140px"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      )}
+
       {/* Day */}
-      <div className="md:col-span-3 md:pl-6">
+      <div className={p.poster_url ? "md:col-span-2" : "md:col-span-3 md:pl-6"}>
         <div className="flex items-baseline gap-3">
           <span
             style={{
@@ -43,7 +61,7 @@ export default function ShowCard({ p }: { p: Performance }) {
       </div>
 
       {/* Title + venue */}
-      <div className="md:col-span-6">
+      <div className={p.poster_url ? "md:col-span-5" : "md:col-span-6"}>
         <h3
           style={{
             fontFamily: "var(--font-fraunces)",
@@ -104,6 +122,10 @@ export default function ShowCard({ p }: { p: Performance }) {
           >
             Get Tickets →
           </a>
+        ) : p.ticket_price ? (
+          <span className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-60">
+            ◆ Admission
+          </span>
         ) : (
           <span className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-60">
             ◆ Free Entry
