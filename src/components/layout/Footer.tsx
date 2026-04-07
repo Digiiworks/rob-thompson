@@ -14,7 +14,7 @@ const links = [
   { href: "/#about", label: "About" },
   { href: "/shows", label: "Shows" },
   { href: "/book", label: "Book" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Footer() {
