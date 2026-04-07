@@ -29,7 +29,7 @@ export default function About() {
               style={{ boxShadow: "12px 12px 0 #7a1818" }}
             >
               <Image
-                src="/photos/rob-03.jpg"
+                src="/photos/rob-05.jpg"
                 alt="Rob Thompson playing acoustic Delta blues guitar live"
                 fill
                 sizes="(max-width: 1024px) 100vw, 620px"
