@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Stacked wordmark — DELTA / BLUES with italic ampersand */}
           <div className="relative">
             <p
-              className="leading-[0.82] tracking-[-0.015em] text-[#f3ebdc]"
+              className="leading-[0.78] tracking-[-0.015em] text-[#f3ebdc]"
               style={{
                 fontFamily: "var(--font-anton)",
                 fontSize: "clamp(72px, 14vw, 220px)",
@@ -35,7 +35,7 @@ export default function Footer() {
               DELTA
             </p>
             <p
-              className="leading-[0.82] tracking-[-0.015em] text-[#f3ebdc] -mt-2 md:-mt-4 flex items-baseline gap-4 md:gap-8"
+              className="leading-[0.78] tracking-[-0.015em] text-[#f3ebdc] flex items-baseline gap-4 md:gap-8"
               style={{
                 fontFamily: "var(--font-anton)",
                 fontSize: "clamp(72px, 14vw, 220px)",
