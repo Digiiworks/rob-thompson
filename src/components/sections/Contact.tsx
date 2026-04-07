@@ -16,8 +16,8 @@ export default function Contact() {
           <span className="hairline flex-1 max-w-[160px]" />
         </div>
 
-        <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
-          <div className="md:col-span-7">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-end">
+          <div className="lg:col-span-7">
             <h2 style={{ fontSize: "clamp(54px, 9vw, 140px)", lineHeight: 0.85 }}>
               Drop
               <br />
@@ -37,7 +37,7 @@ export default function Contact() {
             </h2>
           </div>
 
-          <div className="md:col-span-5">
+          <div className="lg:col-span-5">
             <p
               className="opacity-80"
               style={{ fontFamily: "var(--font-fraunces)", fontSize: 18, lineHeight: 1.55 }}

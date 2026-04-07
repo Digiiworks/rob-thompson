@@ -6,12 +6,12 @@ export default function Hero() {
     <section className="relative min-h-screen w-full overflow-hidden bg-[#0b0805] text-[#f3ebdc] dark-zone">
       {/* Full-bleed background — close-up blues guitarist */}
       <Image
-        src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=2200&q=85&fm=webp"
-        alt="Close-up of a blues guitarist's hands on an electric guitar — Rob Thompson live"
+        src="/photos/rob-04.jpg"
+        alt="Rob Thompson playing his Les Paul live — Delta blues and rock guitarist from Gqeberha"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center opacity-90"
+        className="object-cover object-center opacity-95"
       />
       {/* Painterly gradient overlay — vignette + bottom fade to cream for marquee handoff */}
       <div
@@ -63,7 +63,7 @@ export default function Hero() {
             <h1
               style={{
                 fontFamily: "var(--font-anton)",
-                fontSize: "clamp(82px, 17vw, 250px)",
+                fontSize: "clamp(68px, 13vw, 180px)",
                 lineHeight: 0.82,
                 letterSpacing: "-0.015em",
                 textShadow: "0 2px 30px rgba(0,0,0,0.55)",

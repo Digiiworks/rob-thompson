@@ -21,18 +21,18 @@ export default function About() {
           <span className="hairline flex-1 max-w-[160px]" />
         </div>
 
-        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-start">
-          {/* Image — left, offset */}
-          <div className="md:col-span-5 md:col-start-1">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Image — left */}
+          <div className="lg:col-span-6 lg:col-start-1">
             <div
-              className="relative aspect-[4/5] border border-[#f3ebdc]/30"
-              style={{ boxShadow: "10px 10px 0 #7a1818" }}
+              className="relative aspect-[4/5] w-full max-w-[620px] border border-[#f3ebdc]/30"
+              style={{ boxShadow: "12px 12px 0 #7a1818" }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1525362081669-2b476bb628c3?w=900&q=85&fm=webp"
-                alt="Rob Thompson playing acoustic Delta blues guitar"
+                src="/photos/rob-03.jpg"
+                alt="Rob Thompson playing acoustic Delta blues guitar live"
                 fill
-                sizes="(max-width: 768px) 100vw, 500px"
+                sizes="(max-width: 1024px) 100vw, 620px"
                 className="object-cover"
               />
             </div>
@@ -41,8 +41,8 @@ export default function About() {
             </p>
           </div>
 
-          {/* Copy — right, narrower */}
-          <div className="md:col-span-6 md:col-start-7">
+          {/* Copy — right */}
+          <div className="lg:col-span-6">
             <h2
               style={{
                 fontSize: "clamp(48px, 7.5vw, 110px)",

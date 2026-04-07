@@ -20,22 +20,21 @@
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
 }
 
-html {
+html, body {
   background: #f3ebdc;
+  overflow-x: clip;
 }
 
 body {
-  background: #f3ebdc;
   color: #16110e;
   font-family: var(--font-fraunces), "Times New Roman", serif;
   font-feature-settings: "ss01", "ss02";
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   font-variation-settings: "opsz" 14, "SOFT" 50, "WONK" 0;
 }

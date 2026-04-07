@@ -127,7 +127,7 @@ export default function BookingForm() {
   return (
     <section
       id="book"
-      className="relative bg-[#f3ebdc] text-[#16110e] py-24 md:py-36 px-6 md:px-10"
+      className="relative bg-[#ece2cc] text-[#16110e] py-24 md:py-36 px-6 md:px-10 border-t border-[#16110e]/15"
     >
       <Toaster position="top-center" toastOptions={{ style: { background: "#16110e", color: "#f3ebdc", fontFamily: "var(--font-fraunces)" } }} />
 
@@ -139,8 +139,8 @@ export default function BookingForm() {
           <span className="hairline flex-1 max-w-[160px]" />
         </div>
 
-        <div className="grid md:grid-cols-12 gap-10 md:gap-16">
-          <div className="md:col-span-5">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+          <div className="lg:col-span-5">
             <h2 style={{ fontSize: "clamp(56px, 8vw, 120px)", lineHeight: 0.85 }}>
               Book
               <br />
@@ -154,7 +154,7 @@ export default function BookingForm() {
               A R1,000 deposit secures your date — balance due after the
               performance.
             </p>
-            <div className="mt-10 hidden md:block">
+            <div className="mt-10 hidden lg:block">
               <p className="font-mono text-[10px] tracking-[0.22em] uppercase opacity-60 mb-3">
                 Step {step} of 3
               </p>
@@ -173,7 +173,7 @@ export default function BookingForm() {
 
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="md:col-span-7 border-t border-[#16110e]/30 pt-10"
+            className="lg:col-span-7 border-t border-[#16110e]/30 pt-10"
           >
             {step === 1 && (
               <div className="space-y-8">

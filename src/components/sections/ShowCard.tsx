@@ -19,14 +19,14 @@ export default function ShowCard({ p }: { p: Performance }) {
   const time = formatTime(p.start_time);
 
   return (
-    <article className="group relative grid grid-cols-12 gap-6 items-baseline py-10 border-t border-[#16110e]/20 first:border-t-0 hover:bg-[#16110e] hover:text-[#f3ebdc] hover:dark-zone transition-colors duration-300 cursor-default">
+    <article className="group relative grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-baseline py-10 border-t border-[#16110e]/20 first:border-t-0 hover:bg-[#16110e] hover:text-[#f3ebdc] hover:dark-zone transition-colors duration-300 cursor-default">
       {/* Day */}
-      <div className="col-span-3 md:col-span-2 pl-2 md:pl-6">
-        <div className="flex items-baseline gap-1">
+      <div className="md:col-span-3 md:pl-6">
+        <div className="flex items-baseline gap-3">
           <span
             style={{
               fontFamily: "var(--font-anton)",
-              fontSize: "clamp(72px, 10vw, 132px)",
+              fontSize: "clamp(64px, 8vw, 120px)",
               lineHeight: 0.85,
             }}
             className="group-hover:text-[#c14a1a] transition-colors"
@@ -35,7 +35,7 @@ export default function ShowCard({ p }: { p: Performance }) {
           </span>
           <span
             className="font-mono text-[11px] tracking-[0.18em] uppercase opacity-70"
-            style={{ alignSelf: "flex-start", marginTop: 8 }}
+            style={{ alignSelf: "flex-start", marginTop: 10 }}
           >
             {month}<br />{year}
           </span>
@@ -43,7 +43,7 @@ export default function ShowCard({ p }: { p: Performance }) {
       </div>
 
       {/* Title + venue */}
-      <div className="col-span-9 md:col-span-7">
+      <div className="md:col-span-6">
         <h3
           style={{
             fontFamily: "var(--font-fraunces)",
@@ -80,7 +80,7 @@ export default function ShowCard({ p }: { p: Performance }) {
       </div>
 
       {/* Price + CTA */}
-      <div className="col-span-12 md:col-span-3 md:text-right pr-2 md:pr-6 flex md:flex-col md:items-end gap-4 md:gap-3">
+      <div className="md:col-span-3 md:text-right md:pr-6 flex md:flex-col md:items-end gap-4 md:gap-3">
         <span
           style={{
             fontFamily: "var(--font-anton)",
