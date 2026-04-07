@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Camera } from "lucide-react";
+import { Camera, Facebook } from "lucide-react";
 import { SITE } from "@/lib/utils";
 
 const links = [
@@ -124,6 +124,16 @@ export default function Footer() {
                 className="inline-flex items-center gap-2 hover:text-[#c14a1a]"
               >
                 <Camera size={16} /> @robthompsonband
+              </a>
+            </li>
+            <li>
+              <a
+                href={SITE.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 hover:text-[#c14a1a]"
+              >
+                <Facebook size={16} /> /RobThompsonBand
               </a>
             </li>
           </ul>

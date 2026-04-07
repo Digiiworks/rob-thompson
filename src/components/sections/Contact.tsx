@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, Camera } from "lucide-react";
+import { Phone, Mail, Camera, Facebook } from "lucide-react";
 import { SITE } from "@/lib/utils";
 
 export default function Contact() {
@@ -50,6 +50,7 @@ export default function Contact() {
               <ContactRow icon={<Phone size={18} />} label="Bookings & Enquiries" value={SITE.phone} href={`tel:${SITE.phoneRaw}`} />
               <ContactRow icon={<Mail size={18} />} label="Email" value={SITE.email} href={`mailto:${SITE.email}`} />
               <ContactRow icon={<Camera size={18} />} label="Instagram" value="@robthompsonband" href={SITE.instagram} external />
+              <ContactRow icon={<Facebook size={18} />} label="Facebook" value="/RobThompsonBand" href={SITE.facebook} external />
             </ul>
 
             <div className="flex flex-wrap gap-4 mt-10">

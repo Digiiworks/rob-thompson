@@ -13,6 +13,7 @@ export const SITE = {
   whatsapp: "https://wa.me/27768967076",
   email: "bookings@robthompson.co.za",
   instagram: "https://www.instagram.com/robthompsonband/",
+  facebook: "https://www.facebook.com/RobThompsonBand/",
   city: "Gqeberha",
   region: "Eastern Cape",
   country: "ZA",
