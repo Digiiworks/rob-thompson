@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "robthompson.co.za"
+        }
+      ],
+      "destination": "https://www.robthompson.co.za/:path*",
+      "statusCode": 301
+    }
+  ]
+}

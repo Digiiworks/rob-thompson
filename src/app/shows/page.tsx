@@ -6,7 +6,7 @@ import { SITE } from "@/lib/utils";
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: "Upcoming Live Shows | Rob Thompson | Gqeberha",
+  title: { absolute: "Upcoming Live Shows | Rob Thompson | Gqeberha" },
   description:
     "Upcoming live performances by Rob Thompson — Delta blues and rock shows across Gqeberha, Port Elizabeth and the Eastern Cape. View dates, venues and book tickets.",
   alternates: { canonical: "/shows" },

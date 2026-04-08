@@ -127,7 +127,7 @@ export default function BookingForm() {
   return (
     <section
       id="book"
-      className="relative bg-[#ece2cc] text-[#16110e] py-24 md:py-36 px-6 md:px-10 border-t border-[#16110e]/15"
+      className="relative bg-[#ece2cc] text-[#16110e] py-12 md:py-20 px-6 md:px-10 border-t border-[#16110e]/15"
     >
       <Toaster position="top-center" toastOptions={{ style: { background: "#16110e", color: "#f3ebdc", fontFamily: "var(--font-fraunces)" } }} />
 
@@ -141,11 +141,11 @@ export default function BookingForm() {
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
           <div className="lg:col-span-5">
-            <h2 style={{ fontSize: "clamp(56px, 8vw, 120px)", lineHeight: 0.85 }}>
+            <h1 style={{ fontSize: "clamp(56px, 8vw, 120px)", lineHeight: 0.85 }}>
               Book
               <br />
               Rob<span style={{ color: "#7a1818" }}>.</span>
-            </h2>
+            </h1>
             <p
               className="mt-8 max-w-md opacity-80"
               style={{ fontFamily: "var(--font-fraunces)", fontSize: 18, lineHeight: 1.55 }}
