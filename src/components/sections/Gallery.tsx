@@ -47,14 +47,14 @@ export default function Gallery() {
           {images.map((img, i) => (
             <div
               key={img.src}
-              className={`relative overflow-hidden border border-[#f3ebdc]/20 ${img.span} ${img.h}`}
+              className={`group relative overflow-hidden border border-[#f3ebdc]/20 ${img.span} ${img.h}`}
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover hover:scale-[1.04] transition-transform duration-700"
+                className="object-cover scale-100 group-hover:scale-[1.04] transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform"
               />
               <span className="absolute bottom-3 left-3 font-mono text-[9px] tracking-[0.2em] uppercase text-[#f3ebdc]/80 bg-[#16110e]/60 px-2 py-1">
                 {String(i + 1).padStart(3, "0")} / Live
