@@ -89,6 +89,7 @@ export default async function ShowsPage() {
             fontSize: "clamp(42px, 7vw, 88px)",
             lineHeight: 0.9,
             letterSpacing: "-0.01em",
+            marginTop: "35px",
           }}
         >
           Upcoming Live Shows
