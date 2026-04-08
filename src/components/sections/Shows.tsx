@@ -22,7 +22,7 @@ export default async function Shows() {
         </div>
 
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
-          <h1
+          <h2
             style={{
               fontSize: "clamp(48px, 7vw, 110px)",
               lineHeight: 0.85,
@@ -32,7 +32,7 @@ export default async function Shows() {
             Upcoming
             <br />
             Live Shows<span style={{ color: "#7a1818" }}>.</span>
-          </h1>
+          </h2>
           <p
             className="md:max-w-xs md:text-right opacity-80"
             style={{
