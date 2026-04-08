@@ -56,13 +56,13 @@ const contactLdJson = {
 
 export default function ContactPage() {
   return (
-    <div className="pt-24">
+    <div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactLdJson) }}
       />
       <header
-        className="relative px-6 md:px-10 pt-16 pb-16 text-center"
+        className="relative px-6 md:px-10 pt-36 pb-16 text-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('/photos/rob-01.jpg')",

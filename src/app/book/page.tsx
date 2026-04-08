@@ -61,9 +61,9 @@ export const metadata: Metadata = {
 
 export default function BookPage() {
   return (
-    <div className="pt-16">
+    <div>
       <header
-        className="relative px-6 md:px-10 pt-20 pb-16 text-center"
+        className="relative px-6 md:px-10 pt-36 pb-16 text-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('/photos/rob-01.jpg')",
