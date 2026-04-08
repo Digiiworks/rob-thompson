@@ -6,7 +6,7 @@ import { SITE } from "@/lib/utils";
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: "Live Shows",
+  title: "Upcoming Live Shows | Rob Thompson | Gqeberha",
   description:
     "Upcoming live performances by Rob Thompson — Delta blues and rock shows across Gqeberha, Port Elizabeth and the Eastern Cape. View dates, venues and book tickets.",
   alternates: { canonical: "/shows" },
@@ -31,7 +31,7 @@ export default async function ShowsPage() {
 
   const events = upcoming.map((p) => ({
     "@context": "https://schema.org",
-    "@type": "Event",
+    "@type": "MusicEvent",
     name: p.title,
     startDate: p.start_time
       ? `${p.event_date}T${p.start_time}+02:00`
@@ -75,16 +75,25 @@ export default async function ShowsPage() {
   }));
 
   return (
-    <div className="pt-24">
+    <div className="pt-16">
       {events.length > 0 && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(events) }}
         />
       )}
-      <h1 className="sr-only">
-        Rob Thompson Live Shows — Upcoming Blues Performances in Gqeberha and the Eastern Cape
-      </h1>
+      <header className="max-w-4xl mx-auto px-6 md:px-10 pt-10 pb-4 text-center">
+        <h1
+          style={{
+            fontFamily: "var(--font-anton)",
+            fontSize: "clamp(42px, 7vw, 88px)",
+            lineHeight: 0.9,
+            letterSpacing: "-0.01em",
+          }}
+        >
+          Upcoming Live Shows
+        </h1>
+      </header>
       <Shows />
     </div>
   );
