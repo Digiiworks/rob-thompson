@@ -147,7 +147,7 @@ export default function Hero() {
               R1,000 deposit
             </p>
             <p className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-60 mt-1">
-              Secures any date · Balance after the show
+              Secures Available Date · Balance after the show
             </p>
           </div>
         </div>
