@@ -94,45 +94,70 @@ export default function BookPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLdJson) }}
       />
-      <section className="px-6 md:px-10 py-20 max-w-4xl mx-auto">
-        <h2
-          style={{
-            fontFamily: "var(--font-anton)",
-            fontSize: "clamp(32px, 4vw, 52px)",
-            lineHeight: 1,
-            letterSpacing: "-0.01em",
-            color: "#ffffff",
-            marginBottom: "2rem",
-            textAlign: "center",
-          }}
-        >
-          Booking FAQs
-        </h2>
-        <div className="space-y-8">
-          {faqs.map((f) => (
-            <div key={f.q}>
-              <h3
-                style={{
-                  fontFamily: "var(--font-anton)",
-                  fontSize: "clamp(20px, 2vw, 24px)",
-                  color: "#ffffff",
-                  marginBottom: "0.5rem",
-                }}
-              >
-                {f.q}
-              </h3>
-              <p
-                className="text-white/80"
-                style={{
-                  fontFamily: "var(--font-fraunces)",
-                  fontSize: "clamp(15px, 1.2vw, 17px)",
-                  lineHeight: 1.6,
-                }}
-              >
-                {f.a}
-              </p>
-            </div>
-          ))}
+      <section className="relative px-6 md:px-10 py-24" style={{ background: "#16110e" }}>
+        <div className="max-w-4xl mx-auto">
+          <span
+            style={{
+              fontFamily: "var(--font-fraunces)",
+              fontSize: "0.72rem",
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "#c9a96b",
+              display: "block",
+              marginBottom: "1rem",
+              textAlign: "center",
+            }}
+          >
+            002 / The Details
+          </span>
+          <h2
+            style={{
+              fontFamily: "var(--font-anton)",
+              fontSize: "clamp(34px, 4.5vw, 60px)",
+              lineHeight: 0.95,
+              letterSpacing: "-0.01em",
+              color: "#f3ebdc",
+              marginBottom: "1rem",
+              textAlign: "center",
+            }}
+          >
+            Booking FAQs
+          </h2>
+          <div
+            style={{
+              width: 64,
+              height: 2,
+              background: "#7a1818",
+              margin: "0 auto 3rem",
+            }}
+          />
+          <div className="space-y-10">
+            {faqs.map((f) => (
+              <div key={f.q} style={{ borderTop: "1px solid rgba(243,235,220,0.12)", paddingTop: "1.75rem" }}>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-anton)",
+                    fontSize: "clamp(20px, 2vw, 26px)",
+                    letterSpacing: "0.005em",
+                    color: "#f3ebdc",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  {f.q}
+                </h3>
+                <p
+                  style={{
+                    fontFamily: "var(--font-fraunces)",
+                    fontSize: "clamp(15px, 1.2vw, 17px)",
+                    lineHeight: 1.7,
+                    color: "rgba(243,235,220,0.78)",
+                  }}
+                >
+                  {f.a}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

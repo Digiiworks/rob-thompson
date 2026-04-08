@@ -89,51 +89,74 @@ export default function ContactPage() {
       </header>
       <Contact />
 
-      <section className="px-6 md:px-10 py-20 max-w-4xl mx-auto">
-        <h2
-          style={{
-            fontFamily: "var(--font-anton)",
-            fontSize: "clamp(28px, 3.5vw, 44px)",
-            lineHeight: 1,
-            letterSpacing: "-0.01em",
-            color: "#ffffff",
-            marginBottom: "1.5rem",
-          }}
-        >
-          Where Rob Plays
-        </h2>
-        <p
-          className="text-white/80"
-          style={{
-            fontFamily: "var(--font-fraunces)",
-            fontSize: "clamp(16px, 1.3vw, 18px)",
-            lineHeight: 1.65,
-            marginBottom: "1.25rem",
-          }}
-        >
-          Rob Thompson is based in Gqeberha (Port Elizabeth) and performs regularly across the Eastern Cape — from Jeffreys Bay, St Francis Bay and Port Alfred on the coast to Grahamstown, Kenton-on-Sea and inland farm venues. Bookings further afield in the Garden Route, Western Cape, and Gauteng are welcome on request, with travel quoted per event.
-        </p>
-        <p
-          className="text-white/80"
-          style={{
-            fontFamily: "var(--font-fraunces)",
-            fontSize: "clamp(16px, 1.3vw, 18px)",
-            lineHeight: 1.65,
-            marginBottom: "1.25rem",
-          }}
-        >
-          Whether it&apos;s a wedding on the coast, a corporate year-end, a private birthday party, a restaurant residency, or a full festival slot, Rob brings a polished live Delta blues and blues-rock set with his own PA for most private and corporate functions. Larger venues and outdoor stages are accommodated with venue-supplied sound where needed.
-        </p>
-        <p
-          className="text-white/80"
-          style={{
-            fontFamily: "var(--font-fraunces)",
-            fontSize: "clamp(16px, 1.3vw, 18px)",
-            lineHeight: 1.65,
-          }}
-        >
-          The fastest way to reach Rob is WhatsApp — most messages get a reply within a few hours during the day. For detailed quotes or venue specs, email <a href="mailto:bookings@robthompson.co.za" style={{ color: "#ffffff", textDecoration: "underline" }}>bookings@robthompson.co.za</a> with your date, location, and event type, and Rob will come back to you with availability and pricing.
-        </p>
+      <section className="relative px-6 md:px-10 py-24" style={{ background: "#16110e" }}>
+        <div className="max-w-4xl mx-auto">
+          <span
+            style={{
+              fontFamily: "var(--font-fraunces)",
+              fontSize: "0.72rem",
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "#c9a96b",
+              display: "block",
+              marginBottom: "1rem",
+            }}
+          >
+            001 / Territory
+          </span>
+          <h2
+            style={{
+              fontFamily: "var(--font-anton)",
+              fontSize: "clamp(34px, 4.5vw, 60px)",
+              lineHeight: 0.95,
+              letterSpacing: "-0.01em",
+              color: "#f3ebdc",
+              marginBottom: "2rem",
+            }}
+          >
+            Where Rob Plays
+          </h2>
+          <div
+            style={{
+              width: 64,
+              height: 2,
+              background: "#7a1818",
+              marginBottom: "2rem",
+            }}
+          />
+          <p
+            style={{
+              fontFamily: "var(--font-fraunces)",
+              fontSize: "clamp(16px, 1.3vw, 18px)",
+              lineHeight: 1.7,
+              color: "rgba(243,235,220,0.82)",
+              marginBottom: "1.25rem",
+            }}
+          >
+            Rob Thompson is based in Gqeberha (Port Elizabeth) and performs regularly across the Eastern Cape — from Jeffreys Bay, St Francis Bay and Port Alfred on the coast to Grahamstown, Kenton-on-Sea and inland farm venues. Bookings further afield in the Garden Route, Western Cape, and Gauteng are welcome on request, with travel quoted per event.
+          </p>
+          <p
+            style={{
+              fontFamily: "var(--font-fraunces)",
+              fontSize: "clamp(16px, 1.3vw, 18px)",
+              lineHeight: 1.7,
+              color: "rgba(243,235,220,0.82)",
+              marginBottom: "1.25rem",
+            }}
+          >
+            Whether it&apos;s a wedding on the coast, a corporate year-end, a private birthday party, a restaurant residency, or a full festival slot, Rob brings a polished live Delta blues and blues-rock set with his own PA for most private and corporate functions. Larger venues and outdoor stages are accommodated with venue-supplied sound where needed.
+          </p>
+          <p
+            style={{
+              fontFamily: "var(--font-fraunces)",
+              fontSize: "clamp(16px, 1.3vw, 18px)",
+              lineHeight: 1.7,
+              color: "rgba(243,235,220,0.82)",
+            }}
+          >
+            The fastest way to reach Rob is WhatsApp — most messages get a reply within a few hours during the day. For detailed quotes or venue specs, email <a href="mailto:bookings@robthompson.co.za" style={{ color: "#c9a96b", textDecoration: "underline", textUnderlineOffset: "3px" }}>bookings@robthompson.co.za</a> with your date, location, and event type, and Rob will come back to you with availability and pricing.
+          </p>
+        </div>
       </section>
     </div>
   );
