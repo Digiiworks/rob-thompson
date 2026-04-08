@@ -49,8 +49,7 @@ export const metadata: Metadata = {
     "corporate entertainment Port Elizabeth",
   ],
   alternates: { canonical: "/" },
-  // TODO: Replace with verification code from Google Search Console
-  verification: { google: "REPLACE_WITH_GSC_CODE" },
+  verification: { google: "b6-rVTidaeJDxUeAQSjoqry-Z16CSZPvWWYEX9sIjaI" },
   openGraph: {
     type: "website",
     locale: "en_ZA",
