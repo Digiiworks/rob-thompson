@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative min-h-screen w-full overflow-hidden bg-[#0b0805] text-[#f3ebdc] dark-zone">
       {/* Full-bleed background — close-up blues guitarist */}
       <Image
-        src="/photos/rob-01.jpg"
+        src="/photos/rob-02.jpg"
         alt="Rob Thompson playing his Les Paul live — Delta blues and rock guitarist from Gqeberha"
         fill
         priority
