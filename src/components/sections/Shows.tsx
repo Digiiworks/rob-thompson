@@ -67,8 +67,8 @@ export default async function Shows() {
           </div>
         ) : (
           <div>
-            {upcoming.map((p) => (
-              <ShowCard key={p.id} p={p} />
+            {upcoming.map((p, i) => (
+              <ShowCard key={p.id} p={p} priority={i === 0} />
             ))}
             <div className="border-t border-[#16110e]/20" />
           </div>

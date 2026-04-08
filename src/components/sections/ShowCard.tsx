@@ -12,7 +12,7 @@ function formatTime(t: string | null) {
   return `${h}:${m}`;
 }
 
-export default function ShowCard({ p }: { p: Performance }) {
+export default function ShowCard({ p, priority = false }: { p: Performance; priority?: boolean }) {
   const d = new Date(p.event_date + "T00:00:00");
   const day = d.getDate();
   const month = MONTHS[d.getMonth()];
@@ -34,6 +34,7 @@ export default function ShowCard({ p }: { p: Performance }) {
                 alt={`${p.title} poster`}
                 fill
                 sizes="140px"
+                priority={priority}
                 className="object-cover poster-img"
               />
             </div>

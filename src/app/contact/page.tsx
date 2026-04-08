@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Contact from "@/components/sections/Contact";
 
 export const metadata: Metadata = {
-  title: "Contact Rob Thompson | Blues Musician | Gqeberha",
+  title: { absolute: "Contact Rob Thompson — Blues Musician | Gqeberha" },
   description:
     "Get in touch with Rob Thompson — Delta blues musician in Gqeberha. WhatsApp, phone, and email for bookings and enquiries.",
   alternates: { canonical: "/contact" },
