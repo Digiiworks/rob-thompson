@@ -154,7 +154,7 @@ export default function ContactPage() {
               color: "rgba(243,235,220,0.82)",
             }}
           >
-            The fastest way to reach Rob is WhatsApp — most messages get a reply within a few hours during the day. For detailed quotes or venue specs, email <a href="mailto:bookings@robthompson.co.za" style={{ color: "#c9a96b", textDecoration: "underline", textUnderlineOffset: "3px" }}>bookings@robthompson.co.za</a> with your date, location, and event type, and Rob will come back to you with availability and pricing.
+            The fastest way to reach Rob is <a href="https://wa.me/27768967076" target="_blank" rel="noopener noreferrer" style={{ color: "#c9a96b", textDecoration: "underline", textUnderlineOffset: "3px" }}>WhatsApp</a> — most messages get a reply within a few hours during the day. For detailed quotes or venue specs, email <a href="mailto:bookings@robthompson.co.za" style={{ color: "#c9a96b", textDecoration: "underline", textUnderlineOffset: "3px" }}>bookings@robthompson.co.za</a> with your date, location, and event type, and Rob will come back to you with availability and pricing.
           </p>
         </div>
       </section>

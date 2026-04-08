@@ -95,7 +95,17 @@ export default function BookPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLdJson) }}
       />
       <section className="relative px-6 md:px-10 py-24" style={{ background: "#16110e" }}>
-        <div className="max-w-4xl mx-auto">
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(60% 50% at 50% 0%, rgba(122,24,24,0.22), transparent 70%), radial-gradient(40% 40% at 100% 100%, rgba(201,169,107,0.10), transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div className="relative max-w-4xl mx-auto">
           <span
             style={{
               fontFamily: "var(--font-fraunces)",
@@ -131,31 +141,60 @@ export default function BookPage() {
               margin: "0 auto 3rem",
             }}
           />
-          <div className="space-y-10">
-            {faqs.map((f) => (
-              <div key={f.q} style={{ borderTop: "1px solid rgba(243,235,220,0.12)", paddingTop: "1.75rem" }}>
-                <h3
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            {faqs.map((f, i) => (
+              <details
+                key={f.q}
+                open={i === 0}
+                style={{
+                  background: "rgba(243,235,220,0.04)",
+                  border: "1px solid rgba(243,235,220,0.14)",
+                  borderRadius: 4,
+                  padding: "1.25rem 1.5rem",
+                  color: "#f3ebdc",
+                }}
+              >
+                <summary
                   style={{
+                    listStyle: "none",
+                    cursor: "pointer",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: "1rem",
                     fontFamily: "var(--font-anton)",
-                    fontSize: "clamp(20px, 2vw, 26px)",
+                    fontSize: "clamp(18px, 1.7vw, 23px)",
                     letterSpacing: "0.005em",
                     color: "#f3ebdc",
-                    marginBottom: "0.75rem",
                   }}
                 >
-                  {f.q}
-                </h3>
+                  <span>{f.q}</span>
+                  <span
+                    aria-hidden
+                    style={{
+                      fontFamily: "var(--font-fraunces)",
+                      fontSize: "1.4rem",
+                      lineHeight: 1,
+                      color: "#c9a96b",
+                      flexShrink: 0,
+                    }}
+                  >
+                    +
+                  </span>
+                </summary>
                 <p
                   style={{
+                    marginTop: "0.9rem",
                     fontFamily: "var(--font-fraunces)",
                     fontSize: "clamp(15px, 1.2vw, 17px)",
-                    lineHeight: 1.7,
-                    color: "rgba(243,235,220,0.78)",
+                    lineHeight: 1.75,
+                    color: "#f3ebdc",
+                    opacity: 0.92,
                   }}
                 >
                   {f.a}
                 </p>
-              </div>
+              </details>
             ))}
           </div>
         </div>
