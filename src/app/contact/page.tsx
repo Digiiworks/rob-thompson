@@ -61,20 +61,31 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactLdJson) }}
       />
-      <header className="max-w-4xl mx-auto px-6 md:px-10 pt-6 pb-6 text-center">
+      <header
+        className="relative px-6 md:px-10 pt-16 pb-16 text-center"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('/photos/rob-01.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="max-w-4xl mx-auto">
         <h1
           style={{
             fontFamily: "var(--font-anton)",
             fontSize: "clamp(42px, 7vw, 88px)",
             lineHeight: 0.9,
             letterSpacing: "-0.01em",
+            color: "#ffffff",
           }}
         >
           Contact Rob Thompson
         </h1>
-        <p className="mt-5 max-w-2xl mx-auto text-[#f3ebdc]/80" style={{ fontFamily: "var(--font-fraunces)", fontSize: "clamp(16px, 1.4vw, 19px)", lineHeight: 1.55 }}>
+        <p className="mt-5 max-w-2xl mx-auto text-white/85" style={{ fontFamily: "var(--font-fraunces)", fontSize: "clamp(16px, 1.4vw, 19px)", lineHeight: 1.55 }}>
           Reach Rob directly by WhatsApp, phone or email for bookings, collaborations and enquiries. Based in Gqeberha and available across the Eastern Cape — with travel further afield on request. Most messages get a reply within a few hours during the day, and once your date is locked in with a deposit, Rob will send through a confirmation, set list options, and any tech requirements for the venue.
         </p>
+        </div>
       </header>
       <Contact />
     </div>
