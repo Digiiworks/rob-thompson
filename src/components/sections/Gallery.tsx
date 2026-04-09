@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const images = [
   { src: "/photos/rob-01.jpg", alt: "Rob Thompson live on stage", span: "md:col-span-8", h: "h-[360px] md:h-[560px]" },
@@ -63,6 +64,16 @@ export default function Gallery() {
               </span>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 flex justify-center">
+          <Link
+            href="/gallery"
+            className="group inline-flex items-center gap-3 border border-[#f3ebdc]/30 hover:border-[#c14a1a] hover:text-[#c14a1a] transition-colors duration-300 px-8 py-4 font-mono text-[11px] tracking-[0.22em] uppercase"
+          >
+            See Gallery
+            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </Link>
         </div>
       </div>
     </section>

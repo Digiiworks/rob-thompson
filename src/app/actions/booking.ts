@@ -1,6 +1,7 @@
 "use server";
 
 import { createServerClient } from "@/lib/supabase";
+import { sendBookingConfirmation } from "@/lib/email";
 
 export interface BookingPayload {
   name: string;
@@ -75,6 +76,24 @@ export async function submitBooking(
     if (bookingErr || !booking) {
       console.error("[booking] insert failed:", bookingErr);
       return { ok: false, error: "Could not create your booking. Please try again." };
+    }
+
+    // Fire-and-log confirmation email — never block the booking on mail failure
+    try {
+      await sendBookingConfirmation({
+        name: payload.name,
+        email: payload.email,
+        event_type: payload.event_type,
+        event_date: payload.event_date,
+        start_time: payload.start_time,
+        duration_hours: payload.duration_hours,
+        guest_count: payload.guest_count,
+        venue_name: payload.venue_name,
+        venue_address: payload.venue_address,
+        notes: payload.notes ?? null,
+      });
+    } catch (mailErr) {
+      console.error("[booking] confirmation email failed:", mailErr);
     }
 
     return { ok: true, bookingId: booking.id };

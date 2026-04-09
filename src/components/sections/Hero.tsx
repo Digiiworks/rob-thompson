@@ -1,20 +1,61 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 export default function Hero() {
+  const bgRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = bgRef.current;
+    if (!el) return;
+
+    // Respect users who prefer reduced motion — skip parallax.
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (reduceMotion) return;
+
+    let ticking = false;
+    const update = () => {
+      // translate background at ~40% of scroll — transform-based so it
+      // works on iOS/Android (background-attachment: fixed is broken on mobile).
+      const y = window.scrollY * 0.4;
+      el.style.transform = `translate3d(0, ${y}px, 0)`;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-[#0b0805] text-[#f3ebdc] dark-zone">
-      {/* Full-bleed background — close-up blues guitarist */}
-      <Image
-        src="/photos/vectorink-upscaled-image.jpg"
-        alt="Rob Thompson playing his Les Paul live — blues and rock guitarist from Gqeberha"
-        fill
-        priority
-        fetchPriority="high"
-        sizes="100vw"
-        quality={85}
-        className="object-cover object-center opacity-95"
-      />
+      {/* Full-bleed background — close-up blues guitarist (parallax) */}
+      <div
+        ref={bgRef}
+        className="absolute inset-0 -top-[15%] h-[130%] will-change-transform"
+      >
+        <Image
+          src="/photos/vectorink-upscaled-image.jpg"
+          alt="Rob Thompson playing his Les Paul live — blues and rock guitarist from Gqeberha"
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          quality={85}
+          className="object-cover object-center opacity-95"
+        />
+      </div>
       {/* Painterly gradient overlay — vignette + bottom fade to cream for marquee handoff */}
       <div
         className="absolute inset-0 z-[1]"
