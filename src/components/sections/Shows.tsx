@@ -1,11 +1,12 @@
 import Link from "next/link";
 import ShowCard from "./ShowCard";
+import PastShowsToggle from "./PastShowsToggle";
 import { getUpcomingPerformances, getPastPerformances } from "@/lib/performances";
 
 export default async function Shows() {
   const [upcoming, past] = await Promise.all([
     getUpcomingPerformances(),
-    getPastPerformances(10),
+    getPastPerformances(100),
   ]);
 
   return (
@@ -76,39 +77,12 @@ export default async function Shows() {
 
         {/* Past shows */}
         {past.length > 0 && (
-          <div className="mt-24">
-            <div className="flex items-end justify-between mb-10">
-              <h3
-                style={{
-                  fontSize: "clamp(32px, 4.5vw, 64px)",
-                  lineHeight: 0.9,
-                }}
-              >
-                Past<br />
-                <em
-                  style={{
-                    fontFamily: "var(--font-fraunces)",
-                    fontStyle: "italic",
-                    textTransform: "none",
-                    color: "#7a1818",
-                    fontVariationSettings: "'opsz' 144",
-                    fontWeight: 400,
-                  }}
-                >
-                  shows.
-                </em>
-              </h3>
-              <span className="font-mono text-[10px] tracking-[0.2em] uppercase opacity-60">
-                {past.length} archived
-              </span>
-            </div>
-            <div className="opacity-90">
-              {past.map((p) => (
-                <ShowCard key={p.id} p={p} />
-              ))}
-              <div className="border-t border-[#16110e]/20" />
-            </div>
-          </div>
+          <PastShowsToggle
+            total={past.length}
+            cards={past.map((p) => (
+              <ShowCard key={p.id} p={p} />
+            ))}
+          />
         )}
       </div>
     </section>

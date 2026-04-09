@@ -9,8 +9,9 @@ const links = [
   { href: "/", label: "Home", n: "01" },
   { href: "/#about", label: "About", n: "02" },
   { href: "/shows", label: "Shows", n: "03" },
-  { href: "/book", label: "Book", n: "04" },
-  { href: "/contact", label: "Contact", n: "05" },
+  { href: "/gallery", label: "Gallery", n: "04" },
+  { href: "/book", label: "Book", n: "05" },
+  { href: "/contact", label: "Contact", n: "06" },
 ];
 
 export default function Navbar() {
