@@ -130,7 +130,7 @@ export default function Hero() {
               BOOKINGS AVAILABLE
             </p>
             <p className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-60 mt-1">
-              Secures Available Date · Balance after the show
+              CONTACT ROB · FOR AVAILABLE DATES
             </p>
           </div>
         </div>
