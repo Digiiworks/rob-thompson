@@ -8,12 +8,12 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: { absolute: "Rob Thompson Live Shows — Gqeberha & Eastern Cape" },
   description:
-    "Upcoming live performances by Rob Thompson — Delta blues and rock shows across Gqeberha, Port Elizabeth and the Eastern Cape. View dates, venues and book tickets.",
+    "Upcoming live performances by Rob Thompson — blues and rock shows across Gqeberha, Port Elizabeth and the Eastern Cape. View dates, venues and book tickets.",
   alternates: { canonical: "/shows" },
   openGraph: {
     title: "Live Shows | Rob Thompson — Blues Musician Gqeberha",
     description:
-      "Catch Rob Thompson live across Gqeberha, Port Elizabeth and the Eastern Cape — Delta blues, rock and tribute shows.",
+      "Catch Rob Thompson live across Gqeberha, Port Elizabeth and the Eastern Cape — blues, rock and tribute shows.",
     url: "https://www.robthompson.co.za/shows",
     type: "website",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Rob Thompson live on stage" }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Live Shows | Rob Thompson",
-    description: "Upcoming Delta blues and rock shows across the Eastern Cape.",
+    description: "Upcoming blues and rock shows across the Eastern Cape.",
     images: ["/og-image.jpg"],
   },
 };

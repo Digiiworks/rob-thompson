@@ -55,16 +55,16 @@ export const metadata: Metadata = {
     locale: "en_ZA",
     siteName: "Rob Thompson Band",
     url: SITE_URL,
-    title: "Rob Thompson — Delta Blues Musician | Gqeberha",
+    title: "Rob Thompson — Blues Musician | Gqeberha",
     description:
-      "Book Gqeberha's premier Delta blues and rock guitarist for your next event.",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Rob Thompson — Delta blues guitarist live on stage" }],
+      "Book Gqeberha's premier blues and rock guitarist for your next event.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Rob Thompson — blues guitarist live on stage" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rob Thompson — Delta Blues Musician | Gqeberha",
+    title: "Rob Thompson — Blues Musician | Gqeberha",
     description:
-      "Book Gqeberha's premier Delta blues and rock guitarist for your next event.",
+      "Book Gqeberha's premier blues and rock guitarist for your next event.",
     images: ["/og-image.jpg"],
   },
 };
@@ -110,7 +110,7 @@ export default function RootLayout({
                 alternateName: "Rob Thompson",
                 url: SITE_URL,
                 image: `${SITE_URL}/og-image.jpg`,
-                genre: ["Delta Blues", "Blues Rock", "Acoustic Blues"],
+                genre: ["Blues", "Blues Rock", "Acoustic Blues"],
                 foundingLocation: {
                   "@type": "Place",
                   name: "Gqeberha, Eastern Cape, South Africa",

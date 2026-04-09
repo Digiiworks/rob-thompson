@@ -4,7 +4,7 @@ import BookingForm from "@/components/sections/BookingForm";
 const faqs = [
   {
     q: "What kind of events does Rob play?",
-    a: "Rob performs at weddings, corporate functions, private parties, restaurant and venue nights, product launches, festivals, and private house concerts. Sets can be tailored — laid-back acoustic Delta blues for dinner service, or full electric blues-rock for dance floors.",
+    a: "Rob performs at weddings, corporate functions, private parties, restaurant and venue nights, product launches, festivals, and private house concerts. Sets can be tailored — laid-back acoustic blues for dinner service, or full electric blues-rock for dance floors.",
   },
   {
     q: "How far does Rob travel for bookings?",
@@ -84,7 +84,7 @@ export default function BookPage() {
           Book Rob Thompson
         </h1>
         <p className="mt-5 max-w-2xl mx-auto text-white/85" style={{ fontFamily: "var(--font-fraunces)", fontSize: "clamp(16px, 1.4vw, 19px)", lineHeight: 1.55 }}>
-          Hire Rob Thompson — Gqeberha&apos;s Delta blues and rock guitarist — for weddings, corporate functions, private parties, and venue nights across the Eastern Cape and beyond. Pick your date below and secure it with a R1,000 deposit (or pay in full), and Rob will confirm your booking within 24 hours. The balance is settled on the night of the show, and travel outside Gqeberha can be quoted on request.
+          Hire Rob Thompson — Gqeberha&apos;s blues and rock guitarist — for weddings, corporate functions, private parties, and venue nights across the Eastern Cape and beyond. Pick your date below and secure it with a R1,000 deposit (or pay in full), and Rob will confirm your booking within 24 hours. The balance is settled on the night of the show, and travel outside Gqeberha can be quoted on request.
         </p>
         </div>
       </header>

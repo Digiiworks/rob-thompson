@@ -4,7 +4,7 @@ import Contact from "@/components/sections/Contact";
 export const metadata: Metadata = {
   title: { absolute: "Contact Rob Thompson — Blues Musician | Gqeberha" },
   description:
-    "Get in touch with Rob Thompson — Delta blues musician in Gqeberha. WhatsApp, phone, and email for bookings and enquiries.",
+    "Get in touch with Rob Thompson — blues musician in Gqeberha. WhatsApp, phone, and email for bookings and enquiries.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact Rob Thompson — Live Blues Musician Gqeberha",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Contact Rob Thompson",
-    description: "Get in touch — Gqeberha-based Delta blues musician.",
+    description: "Get in touch — Gqeberha-based blues musician.",
     images: ["/og-image.jpg"],
   },
 };
@@ -144,7 +144,7 @@ export default function ContactPage() {
               marginBottom: "1.25rem",
             }}
           >
-            Whether it&apos;s a wedding on the coast, a corporate year-end, a private birthday party, a restaurant residency, or a full festival slot, Rob brings a polished live Delta blues and blues-rock set with his own PA for most private and corporate functions. Larger venues and outdoor stages are accommodated with venue-supplied sound where needed.
+            Whether it&apos;s a wedding on the coast, a corporate year-end, a private birthday party, a restaurant residency, or a full festival slot, Rob brings a polished live blues and blues-rock set with his own PA for most private and corporate functions. Larger venues and outdoor stages are accommodated with venue-supplied sound where needed.
           </p>
           <p
             style={{

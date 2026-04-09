@@ -46,7 +46,7 @@ const overlaySvg = `
 
   <!-- italic accent -->
   <text x="60" y="500" font-family="Georgia,Times,serif" font-style="italic" font-size="42" fill="#c14a1a">
-    delta blues &amp; rock
+    blues &amp; rock
   </text>
 
   <!-- subhead -->
