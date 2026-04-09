@@ -68,10 +68,16 @@ export default function BookingForm() {
         ? ["name", "email", "phone"]
         : ["event_date", "event_type", "venue_name", "venue_address", "start_time", "duration_hours", "guest_count"];
     const ok = await trigger(fields);
-    if (ok) setStep((s) => (s + 1) as 1 | 2 | 3);
+    if (!ok) {
+      const firstError = fields.map((f) => errors[f]?.message).find(Boolean);
+      toast.error(firstError ?? "Please fill in all required fields", { id: "booking-validation" });
+      return;
+    }
+    setStep((s) => (s + 1) as 1 | 2 | 3);
   }
 
   async function onSubmit(data: BookingValues) {
+    if (step !== 3) return;
     const result = await submitBooking({ ...data, yoco_deposit_reference: null });
     if (!result.ok) {
       toast.error(result.error ?? "Booking failed");
@@ -129,7 +135,39 @@ export default function BookingForm() {
       id="book"
       className="relative bg-[#ece2cc] text-[#16110e] py-12 md:py-20 px-6 md:px-10 border-t border-[#16110e]/15"
     >
-      <Toaster position="top-center" toastOptions={{ style: { background: "#16110e", color: "#f3ebdc", fontFamily: "var(--font-fraunces)" } }} />
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: "#16110e",
+            color: "#f3ebdc",
+            fontFamily: "var(--font-fraunces)",
+            fontSize: "15px",
+            borderRadius: 0,
+            border: "1px solid rgba(243,235,220,0.12)",
+            padding: "14px 18px",
+            letterSpacing: "0.01em",
+          },
+          success: {
+            iconTheme: { primary: "#c9a96b", secondary: "#16110e" },
+          },
+          error: {
+            style: {
+              background: "#16110e",
+              color: "#f3ebdc",
+              fontFamily: "var(--font-fraunces)",
+              fontSize: "15px",
+              borderRadius: 0,
+              border: "1px solid #7a1818",
+              borderLeft: "3px solid #7a1818",
+              padding: "14px 18px",
+              letterSpacing: "0.01em",
+            },
+            iconTheme: { primary: "#7a1818", secondary: "#f3ebdc" },
+          },
+        }}
+      />
 
       <div className="max-w-[1400px] mx-auto">
         <div className="flex items-center gap-4 mb-12">
@@ -172,7 +210,19 @@ export default function BookingForm() {
           </div>
 
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(onSubmit, (formErrors) => {
+              const first = Object.values(formErrors).find((e) => e?.message)?.message;
+              toast.error(first ?? "Please complete all required fields", { id: "booking-validation" });
+            })}
+            onKeyDown={(e) => {
+              if (
+                e.key === "Enter" &&
+                (e.target as HTMLElement).tagName !== "TEXTAREA" &&
+                step < 3
+              ) {
+                e.preventDefault();
+              }
+            }}
             className="lg:col-span-7 border-t border-[#16110e]/30 pt-10"
           >
             {step === 1 && (
