@@ -322,7 +322,7 @@ export default function BookingForm() {
                 <div className="space-y-4">
                   <PaymentOption
                     value="deposit_now"
-                    title="Pay R1,000 Deposit"
+                    title="Pay 50% Deposit"
                     desc="Balance due after performance. Locks in your date."
                     register={register("payment_option")}
                   />
