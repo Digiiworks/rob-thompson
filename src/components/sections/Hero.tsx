@@ -73,24 +73,7 @@ export default function Hero() {
             >
               ROB
               <br />
-              <span className="inline-flex items-baseline gap-3 md:gap-5">
-                THOMPS
-                <span
-                  className="inline-block align-baseline"
-                  style={{
-                    fontFamily: "var(--font-fraunces)",
-                    fontStyle: "italic",
-                    fontWeight: 400,
-                    fontVariationSettings: "'opsz' 144, 'SOFT' 100",
-                    color: "#c14a1a",
-                    fontSize: "0.95em",
-                    lineHeight: 1,
-                  }}
-                >
-                  o
-                </span>
-                N
-              </span>
+              THOMPSON
             </h1>
           </div>
         </div>
@@ -144,7 +127,7 @@ export default function Hero() {
                 color: "#f3ebdc",
               }}
             >
-              Deposit confirms booking
+              BOOKINGS AVAILABLE
             </p>
             <p className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-60 mt-1">
               Secures Available Date · Balance after the show
