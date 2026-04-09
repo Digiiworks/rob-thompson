@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -47,6 +47,11 @@ const eventTypes = [
 export default function BookingForm() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [submitted, setSubmitted] = useState(false);
+  const stepReachedAt = useRef<number>(0);
+
+  useEffect(() => {
+    stepReachedAt.current = Date.now();
+  }, [step]);
 
   const {
     register,
@@ -78,6 +83,9 @@ export default function BookingForm() {
 
   async function onSubmit(data: BookingValues) {
     if (step !== 3) return;
+    // Extra guard: require user to have landed on step 3 for at least a moment,
+    // to prevent ghost-click race when Next advances from step 2 → 3.
+    if (!stepReachedAt.current || Date.now() - stepReachedAt.current < 400) return;
     const result = await submitBooking({ ...data, yoco_deposit_reference: null });
     if (!result.ok) {
       toast.error(result.error ?? "Booking failed");
@@ -353,7 +361,15 @@ export default function BookingForm() {
                   Next →
                 </button>
               ) : (
-                <button type="submit" disabled={isSubmitting} className="btn-primary">
+                <button
+                  type="button"
+                  disabled={isSubmitting}
+                  onClick={() => handleSubmit(onSubmit, (formErrors) => {
+                    const first = Object.values(formErrors).find((e) => e?.message)?.message;
+                    toast.error(first ?? "Please complete all required fields", { id: "booking-validation" });
+                  })()}
+                  className="btn-primary"
+                >
                   {isSubmitting
                     ? "Sending…"
                     : values.payment_option === "deposit_now"
