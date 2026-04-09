@@ -9,9 +9,8 @@ import Link from "next/link";
 import { SITE } from "@/lib/utils";
 import { submitBooking } from "@/app/actions/booking";
 
-const tomorrow = () => {
+const today = () => {
   const d = new Date();
-  d.setDate(d.getDate() + 1);
   return d.toISOString().split("T")[0];
 };
 
@@ -197,7 +196,7 @@ export default function BookingForm() {
               style={{ fontFamily: "var(--font-fraunces)", fontSize: 18, lineHeight: 1.55 }}
             >
               Private events · Corporate functions · Weddings · Venue nights.
-              A R1,000 deposit secures your date — balance due after the
+              A 50% deposit secures your date — balance due after the
               performance.
             </p>
             <div className="mt-10 hidden lg:block">
@@ -261,7 +260,7 @@ export default function BookingForm() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-8">
                   <Field label="Event Date" error={errors.event_date?.message}>
-                    <input type="date" min={tomorrow()} {...register("event_date")} className="field" />
+                    <input type="date" min={today()} {...register("event_date")} className="field" />
                   </Field>
                   <Field label="Event Type" error={errors.event_type?.message}>
                     <select {...register("event_type")} className="field">
