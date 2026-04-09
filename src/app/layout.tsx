@@ -31,17 +31,17 @@ const SITE_URL = "https://www.robthompson.co.za";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Rob Thompson — Delta Blues Musician | Gqeberha",
-    template: "%s | Rob Thompson — Delta Blues Musician | Gqeberha",
+    default: "Rob Thompson — Blues Musician | Gqeberha",
+    template: "%s | Rob Thompson — Blues Musician | Gqeberha",
   },
   description:
-    "Book Rob Thompson — Gqeberha's premier Delta blues and rock guitarist for private events, corporate functions, weddings and venues across the Eastern Cape.",
+    "Book Rob Thompson — Gqeberha's premier blues and rock guitarist for private events, corporate functions, weddings and venues across the Eastern Cape.",
   keywords: [
     "blues musician Gqeberha",
     "live music Port Elizabeth",
     "blues guitarist PE",
     "book live band Eastern Cape",
-    "Delta blues South Africa",
+    "blues South Africa",
     "Rob Thompson band",
     "live entertainment Gqeberha",
     "acoustic guitarist PE",

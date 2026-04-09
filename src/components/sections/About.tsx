@@ -30,7 +30,7 @@ export default function About() {
             >
               <Image
                 src="/photos/rob-05.jpg"
-                alt="Rob Thompson playing acoustic Delta blues guitar live"
+                alt="Rob Thompson playing acoustic blues guitar live"
                 fill
                 sizes="(max-width: 1024px) 100vw, 620px"
                 className="object-cover"
@@ -79,7 +79,7 @@ export default function About() {
             >
               Rob Thompson plays the kind of blues you feel in your ribs.
               Born and raised in Gqeberha, he&apos;s spent the better part of
-              two decades dragging Delta licks, slide guitar and Mississippi
+              two decades dragging blues licks, slide guitar and Mississippi
               grit across every stage from speakeasies to festival main stages
               up and down the Eastern Cape.
             </p>
