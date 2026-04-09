@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Full-bleed background — close-up blues guitarist */}
       <Image
         src="/photos/vectorink-upscaled-image.jpg"
-        alt="Rob Thompson playing his Les Paul live — Delta blues and rock guitarist from Gqeberha"
+        alt="Rob Thompson playing his Les Paul live — blues and rock guitarist from Gqeberha"
         fill
         priority
         fetchPriority="high"
@@ -108,7 +108,7 @@ export default function Hero() {
                 color: "#f3ebdc",
               }}
             >
-              Raw, soul-on-the-floor Delta blues from the Eastern Cape.
+              Raw, soul-on-the-floor blues from the Eastern Cape.
               <em
                 style={{
                   fontVariationSettings: "'opsz' 60, 'SOFT' 100",
@@ -144,7 +144,7 @@ export default function Hero() {
                 color: "#f3ebdc",
               }}
             >
-              R1,000 deposit
+              Deposit confirms booking
             </p>
             <p className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-60 mt-1">
               Secures Available Date · Balance after the show
@@ -160,7 +160,7 @@ export default function Hero() {
             <div key={copy} className="flex shrink-0">
               {[
                 "GQEBERHA",
-                "DELTA BLUES",
+                "BLUES & ROCK",
                 "EASTERN CAPE",
                 "LIVE GUITAR",
                 "PORT ELIZABETH",
