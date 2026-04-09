@@ -56,7 +56,7 @@ export default function Hero() {
                 letterSpacing: "0.02em",
               }}
             >
-              DELTA<br />BLUES<br />&amp; ROCK
+              BLUES<br />&amp; ROCK
             </p>
           </div>
 
