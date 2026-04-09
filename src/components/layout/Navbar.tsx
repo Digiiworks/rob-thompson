@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -15,6 +16,21 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      e.preventDefault();
+      router.push("/");
+      requestAnimationFrame(() =>
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      );
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -32,7 +48,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between">
-        <Link href="/" className="flex items-baseline gap-3 text-current">
+        <Link href="/" onClick={handleLogoClick} className="flex items-baseline gap-3 text-current cursor-pointer">
           <span
             style={{
               fontFamily: "var(--font-anton)",
