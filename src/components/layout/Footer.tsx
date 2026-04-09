@@ -91,7 +91,7 @@ export default function Footer() {
             ◆ The Player
           </p>
           <p style={{ fontFamily: "var(--font-fraunces)", fontSize: 17, lineHeight: 1.55 }}>
-            Rob Thompson — blues &amp; rock guitarist. Based in
+            Rob Thompson — Delta blues &amp; rock guitarist. Based in
             Gqeberha, available across the Eastern Cape and beyond.
           </p>
         </div>
