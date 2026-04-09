@@ -141,7 +141,21 @@ export function renderBookingConfirmationHtml(d: BookingEmailData): string {
 </td></tr>
 <tr><td class="px" style="padding:32px 44px 8px;">
 <p style="margin:0 0 12px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(243,235,220,0.55);">003 / Payment</p>
-<p style="margin:0;font-family:'Fraunces',Georgia,serif;font-size:17px;line-height:1.55;color:rgba(243,235,220,0.82);"><em style="color:#c14a1a;font-style:italic;">Deposit received.</em> The remaining balance is settled directly with Rob on or before the event night.</p>
+<p style="margin:0 0 18px;font-family:'Fraunces',Georgia,serif;font-size:17px;line-height:1.55;color:rgba(243,235,220,0.82);">To secure your booking, please settle the deposit via EFT to the account below. The remaining balance is payable directly to Rob on or before the event night.</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid rgba(243,235,220,0.18);">
+<tr><td style="padding:18px 22px;">
+<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(243,235,220,0.5);">Account Holder</div>
+<div style="margin-top:4px;font-family:'Fraunces',Georgia,serif;font-size:18px;color:#f3ebdc;">RE Thompson</div>
+<div style="height:1px;background:rgba(243,235,220,0.1);margin:14px 0;line-height:1px;font-size:1px;">&nbsp;</div>
+<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(243,235,220,0.5);">Bank</div>
+<div style="margin-top:4px;font-family:'Fraunces',Georgia,serif;font-size:18px;color:#f3ebdc;">Capitec Bank</div>
+<div style="height:1px;background:rgba(243,235,220,0.1);margin:14px 0;line-height:1px;font-size:1px;">&nbsp;</div>
+<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(243,235,220,0.5);">Account Number</div>
+<div style="margin-top:4px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:18px;color:#f3ebdc;letter-spacing:0.04em;">13479249080</div>
+<div style="height:1px;background:rgba(243,235,220,0.1);margin:14px 0;line-height:1px;font-size:1px;">&nbsp;</div>
+<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(243,235,220,0.5);">Reference</div>
+<div style="margin-top:4px;font-family:'Fraunces',Georgia,serif;font-size:18px;color:#f3ebdc;">${v.NAME} · ${v.EVENT_DATE}</div>
+</td></tr></table>
 </td></tr>
 <tr><td class="px" align="left" style="padding:28px 44px 44px;">
 <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="background:#c14a1a;">
